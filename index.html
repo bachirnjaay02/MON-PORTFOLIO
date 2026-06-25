@@ -3,621 +3,929 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bassirou ndiaye | Innovative Developer & Designer</title>
+    <title>Cheikh Bass Ndiaye | Développeur Full Stack Web & Mobile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* About Stats */
+        .about-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .stat { text-align: center; }
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -3.4rem;
+            top: 0.5rem;
+            width: 18px;
+            height: 18px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid var(--light);
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+        .timeline-dot.education {
+            background: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent);
+        }
+        .timeline-content {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px var(--shadow);
+            border: 1px solid #e9ecef;
+        }
+        .timeline-date {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+        .timeline-content h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+        .timeline-content ul li {
+            padding: 0.4rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            color: #636e72;
+        }
+        .timeline-content ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Tech Tags */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .tech-tags span {
+            background: rgba(6, 4, 136, 0.08);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid rgba(6, 4, 136, 0.2);
+        }
+
+        /* Stack Grid */
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .stack-category {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px var(--shadow);
+            border: 1px solid #e9ecef;
+            transition: var(--transition);
+        }
+        .stack-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .stack-category h3 {
+            color: var(--dark);
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+        }
+        .stack-category h3 i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+        .stack-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .stack-item {
+            background: var(--bg-light);
+            color: var(--dark);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #e9ecef;
+            transition: var(--transition);
+        }
+        .stack-item:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Overlay Tags & btn-light */
+        .overlay-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin: 0.5rem 0;
+        }
+        .overlay-tags span {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            backdrop-filter: blur(5px);
+        }
+        .btn-light {
+            display: inline-block;
+            margin-top: 0.8rem;
+            padding: 0.5rem 1.2rem;
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .btn-light:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Section1 pour portfolio */
+        .section1 {
+            padding: 6rem 5%;
+            background-color: var(--bg-light);
+        }
+
+        /* Contact — grille 3 colonnes, icône centrée */
+        .contact-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .contact-info .contact-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        .contact-info .contact-card .contact-icon {
+            font-size: 2rem;
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+        .contact-info .contact-card .contact-details h3 {
+            margin-bottom: 0.4rem;
+        }
+
+        @media (max-width: 900px) {
+            .contact-info { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .about-stats { gap: 1rem; }
+            .stat-number { font-size: 1.8rem; }
+            .timeline { padding-left: 2rem; }
+            .timeline-dot { left: -2.4rem; }
+            .contact-info { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .contact-info { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Particles.js Background -->
-    <div id="particles-js"></div>
-    
     <!-- Header -->
     <header id="header">
-        <a href="#" class="logo">SEEXBASS<span>NDIAYE</span></a>
-        
+        <a href="#home" class="logo">CHEIKH<span>BASS</span><span style="color: gray;"> code</span></a>
+
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#experience">Expérience</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        
-        <!-- <div class="hamburger">
+
+        <div class="hamburger">
             <div></div>
             <div></div>
             <div></div>
-        </div> -->
+        </div>
     </header>
-    
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
                 <h4>Bonjour, Je suis</h4>
-                <h1>Cheikh Bass Ndiaye <span>Creatif developpeur</span></h1>
-                <p>Je construis des expériences numériques exceptionnelles qui sont rapides, accessibles, visuellement attrayantes et réactives. Transformons vos idées en réalité !</p>
+                <h1>Cheikh Bass Ndiaye <span>Développeur Full Stack</span></h1>
+                <p>Développeur Full Stack Web & Mobile diplômé de Bakeli School of Technology. Je construis des applications performantes, des interfaces responsives et des API robustes pour des PME et communautés sénégalaises.</p>
                 <div class="hero-btns">
-                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">contact</a>
+                    <a href="#portfolio" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
                 </div>
             </div>
-            
+
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Alex Carter">
-                
+                <img src="code.png" alt="Cheikh Bass Ndiaye — Développeur Full Stack">
+
                 <div class="social-links">
-                    <a href="https://github.com/BASSIROUNDIAYE233"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/cheikh-bass-ndiaye-739332346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/seexbass_majalis/#"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@seexbassmajalis"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://github.com/bachirnjaay02" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/cheikh-bass-ndiaye-739332346" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://dribbble.com/seexbassmajalis17_" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    <a href="https://www.instagram.com/seexbass_majalis/#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <!-- message sur mon whatsapp -->
+                     <a href="whatsapp://send?phone=221778401904" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- About Section -->
     <section class="section" id="about">
         <div class="section-title">
-            <h2>About Me</h2>
+            <h2>À propos de moi</h2>
         </div>
-        
+
         <div class="about-content section-content">
             <div class="about-image">
-                <img src="photo.jpeg">
+                <img src="photo.jpeg" alt="Cheikh Bass Ndiaye">
             </div>
-            
+
             <div class="about-text">
-                <h3>Qui suis-je ?</h3>
-                <p>Je suis un développeur Frontend et designeur Graphique passionné depuis tout petit dans la création de produits numériques et de la technologies. Je me spécialise dans les frameworks JavaScript et j'ai un regard aiguisé pour le design et l'expérience utilisateur.</p>
-                <p>Mon approche combine l'expertise technique avec la résolution créative de problèmes pour livrer des solutions qui fonctionnent parfaitement et qui plaisent aux utilisateurs.</p>
-                
+                <h3>Développeur Full Stack Web & Mobile</h3>
+                <p>Diplômé de <strong>Bakeli School of Technology</strong>, avec une expérience pratique acquise en stage chez <strong>VOLKENO</strong> et plusieurs projets freelance livrés pour des PME et communautés sénégalaises.</p>
+                <p>Je maîtrise le cycle complet de développement : interfaces responsives (React.js, Bootstrap, Tailwind), API robustes (PHP/Laravel, Node.js), bases de données (MySQL, PostgreSQL, Supabase) et déploiement (Netlify, Vercel, Railway, Render).</p>
+
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Ans d'expérience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Projets livrés</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                </div>
+
                 <div class="skills">
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span>Web Development</span>
-                            <span>95%</span>
+                            <span>Frontend (React.js / HTML / CSS)</span>
+                            <span>92%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
+                            <div class="skill-progress" style="width: 0%"></div>
                         </div>
                     </div>
-                    
+
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span>Photoshop</span>
-                            <span>80%</span>
+                            <span>Backend (PHP / Laravel / Node.js)</span>
+                            <span>82%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
+                            <div class="skill-progress" style="width: 0%"></div>
                         </div>
                     </div>
-                    
+
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span>Affinity Designer</span>
+                            <span>Bases de données (MySQL / PostgreSQL / Supabase)</span>
                             <span>85%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                            <div class="skill-progress" style="width: 0%"></div>
                         </div>
                     </div>
-                </div>
+
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span>Adope illustrator</span>
+                            <span>Mobile (React Native / Expo)</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Design (Affinity Designer / Photoshop)</span>
                             <span>80%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
+                            <div class="skill-progress" style="width: 0%"></div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- telecharger mon CV -->
-                <a href="mon Cv dev designer.pdf" class="btn btn-primary" download>Download CV</a>
+
+                <a href="CV CHEIKHBASS_devfullstack.docx" class="btn btn-primary" download style="margin-top: 2rem; display: inline-block;">
+                    <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Télécharger mon CV
+                </a>
             </div>
         </div>
     </section>
-    
+
+    <!-- Experience & Education Section -->
+    <section class="section" id="experience" style="background-color: var(--bg-light);">
+        <div class="section-title">
+            <h2>Expérience & Formation</h2>
+        </div>
+
+        <div class="timeline section-content">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date"><i class="fas fa-briefcase" style="margin-right:0.4rem;"></i>2023 – Présent</span>
+                    <h3>Développeur Full Stack — Freelance</h3>
+                    <h4>Dakar, Sénégal</h4>
+                    <ul>
+                        <li>Développement de <strong>Leer-Xassida.online</strong> : PWA de lecture de poésie Soufie multilingue (arabe, wolof, français) avec service worker et mode hors-ligne.</li>
+                        <li>Création de <strong>Ndiggël App</strong> : plateforme de gestion financière pour dahiras et tontines avec intégration paiement PayTech (IPN callbacks).</li>
+                        <li>Livraison de <strong>Vertuoso Légumes</strong> : e-commerce complet avec panel admin, gestion des commandes WhatsApp et localStorage.</li>
+                        <li>Développement de sites e-commerces : <strong>beautex-univers.online</strong>, <strong>cafetuubamajalis.online</strong>, <strong>majalis-store.vercel.app</strong>.</li>
+                        <li>Application mobile HTML5/CSS/JavaScript pour un Dahira : <strong>app-dma.netlify.app</strong>.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>React.js</span><span>Laravel</span><span>Supabase</span><span>MySQL</span><span>TypeScript</span><span>React Native</span><span>Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date"><i class="fas fa-briefcase" style="margin-right:0.4rem;"></i>2022 — 3 mois</span>
+                    <h3>Stagiaire Développeur Web</h3>
+                    <h4>VOLKENO — Dakar, Sénégal</h4>
+                    <ul>
+                        <li>Participation au développement d'applications web client en PHP/Laravel et JavaScript.</li>
+                        <li>Intégration d'interfaces responsives avec Bootstrap et CSS3 sur des projets internes.</li>
+                        <li>Collaboration en équipe Agile (sprints, revues de code, Git/GitHub).</li>
+                        <li>Contribution à la conception et maintenance de bases de données MySQL.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>PHP</span><span>Laravel</span><span>Bootstrap</span><span>JavaScript</span><span>MySQL</span><span>Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot education"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>2025 – 2026</span>
+                    <h3>Certification Développeur Full Stack</h3>
+                    <h4>Bakeli School of Technology — Dakar, Sénégal</h4>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot education"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>En cours</span>
+                    <h3>Certifications freeCodeCamp</h3>
+                    <h4>En ligne</h4>
+                    <ul>
+                        <li>Certification Développeur JavaScript</li>
+                        <li>Certification Développeur Python</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot education"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>2026</span>
+                    <h3>Baccalauréat Série S2 — Sciences Exactes</h3>
+                    <h4>Lycée — Dakar, Sénégal</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section class="section" id="services">
         <div class="section-title">
-            <h2>My Services</h2>
+            <h2>Mes Services</h2>
         </div>
-        
+
         <div class="services-grid section-content">
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-code"></i>
                 </div>
-                <h3>développement Web</h3>
-                <p>Création de sites web et d'applications web personnalisées avec les dernières technologies comme React, Vue, Node.js, et plus encore.</p>
+                <h3>Développement Web Full Stack</h3>
+                <p>Création de sites web et applications web complètes : interfaces React.js responsives, API Laravel/Node.js robustes, bases de données MySQL/PostgreSQL.</p>
             </div>
-            
+
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
-                <h3>Photoshop</h3>
-                <p>Création et édition d'images avec Photoshop pour des projets graphiques professionnels.</p>
+                <h3>Applications Mobile</h3>
+                <p>Développement d'applications mobiles cross-platform avec React Native et Expo pour iOS et Android, avec accès aux fonctionnalités natives.</p>
             </div>
-            
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3>E-commerce</h3>
+                <p>Boutiques en ligne complètes avec panel admin, gestion des commandes, intégration paiement PayTech et modes de paiement offline.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3>API & Backend</h3>
+                <p>Conception d'API REST performantes avec PHP/Laravel ou Node.js/Express, déploiement sur Vercel, Railway ou Render.</p>
+            </div>
+
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-paint-brush"></i>
                 </div>
-                <h3>Affinity Designer</h3>
-                <p>Création de designs graphiques professionnels avec Affinity Designer pour des projets variés.</p>
+                <h3>Design Graphique</h3>
+                <p>Création d'identités visuelles, logos, affiches et supports de communication professionnels avec Affinity Designer et Photoshop.</p>
             </div>
-            
+
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-search"></i>
                 </div>
                 <h3>Optimisation SEO</h3>
-                <p>Améliorez votre positionnement dans les résultats de recherche et votre visibilité en ligne avec des stratégies SEO éprouvées et des techniques efficaces.</p>
+                <p>Amélioration du positionnement dans les résultats de recherche avec des stratégies SEO éprouvées et des techniques d'optimisation efficaces.</p>
             </div>
-            
-           
         </div>
     </section>
-           
-    
+
     <!-- Portfolio Section -->
     <section class="section1" id="portfolio">
         <div class="section-title">
-            <h2>My Portfolio</h2>
+            <h2>Mes Projets</h2>
         </div>
-        
+
         <div class="section-content">
-        <div class="portfolio-filter">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="web">Web</button>
-            <button class="filter-btn" data-filter="app">App</button>
-            <button class="filter-btn" data-filter="design">Design</button>
-        </div>
-        
-        <div class="portfolio-grid">
-            <div class="portfolio-item" data-category="web">
-                <img src="data:image/png;base64,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">
-                <div class="portfolio-overlay">
-                    <h3>zemberei calculator</h3>
-                    <p>calculatrice format web </p>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="leer-xassida.png" alt="Leer Xassida">
+                    <div class="portfolio-overlay">
+                        <h3>Leer-Xassida.online</h3>
+                        <p>PWA de lecture de poésie Soufie multilingue (arabe, wolof, français) avec mode hors-ligne</p>
+                        <div class="overlay-tags"><span>React.js</span><span>PWA</span><span>Supabase</span><span>Netlify</span></div>
+                        <a href="https://leer-xassidas.netlify.app/" target="_blank" class="btn-light">Voir le site →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="ndiggel-app.png" alt="Ndiggël App">
+                    <div class="portfolio-overlay">
+                        <h3>Ndiggël App</h3>
+                        <p>Plateforme de gestion financière pour dahiras et tontines avec intégration paiement PayTech</p>
+                        <div class="overlay-tags"><span>React.js</span><span>TypeScript</span><span>Supabase</span><span>Node.js</span></div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <img src="CAFETUUBAMAJALIS.png" alt="Cafe Tuuba Majalis" onerror="this.src='https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&h=400&fit=crop&auto=format'">
+                    <div class="portfolio-overlay">
+                        <h3>Cafe Tuuba Majalis</h3>
+                        <p>Site e-commerce complet pour une entreprise de café sénégalaise</p>
+                        <div class="overlay-tags"><span>React.js</span><span>Laravel</span><span>MySQL</span></div>
+                        <a href="https://cafetuubamajalis.online" target="_blank" class="btn-light">Voir le site →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <img src="BEAUTEXUNIVERS.png" alt="Beautex Univers" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&auto=format'">
+                    <div class="portfolio-overlay">
+                        <h3>Beautex Univers</h3>
+                        <p>Site e-commerce pour une entreprise de tissus</p>
+                        <div class="overlay-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                        <a href="https://beautex-univers.online" target="_blank" class="btn-light">Voir le site →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <img src="vertuoso.png" alt="Vertuoso Légumes">
+                    <div class="portfolio-overlay">
+                        <h3>Vertuoso Légumes</h3>
+                        <p>E-commerce légumes Dakar — commandes WhatsApp, panel admin, paiement offline</p>
+                        <div class="overlay-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>LocalStorage</span></div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="majalis-store.png" alt="Majalis Store App">
+                    <div class="portfolio-overlay">
+                        <h3>Majalis Store App</h3>
+                        <p>App mobile Mouride : Xassidas, compteur Wird, horaires de prières</p>
+                        <div class="overlay-tags"><span>React Native</span><span>Expo</span><span>Zustand</span></div>
+                        <a href="https://majalis-store.vercel.app" target="_blank" class="btn-light">Voir le projet →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="app-dma.png" alt="App DMA">
+                    <div class="portfolio-overlay">
+                        <h3>App DMA — Dahira</h3>
+                        <p>Application mobile pour un Dahira sénégalais</p>
+                        <div class="overlay-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                        <a href="https://app-dma.netlify.app" target="_blank" class="btn-light">Voir l'app →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <img src="zemberei.png" alt="Zemberei Calculator">
+                    <div class="portfolio-overlay">
+                        <h3>Zemberei Calculator</h3>
+                        <p>Calculatrice web interactive et responsive</p>
+                        <div class="overlay-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <img src="weather-now.png" alt="Weather Now">
+                    <div class="portfolio-overlay">
+                        <h3>Weather Now</h3>
+                        <p>Application météo interactive et responsive</p>
+                        <div class="overlay-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="miniature cloture FULKU MASHOUNE.jpg" alt="miniature cloture FULKU MASHOUNE">
+                    <div class="portfolio-overlay">
+                        <h3>Miniature Cloture FULKU MASHOUNE</h3>
+                        <p>Miniature de cloture FULKU MASHOUNE pour Youtube</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="RECTO-VRTU.png" alt="RECTO VRTU">
+                    <div class="portfolio-overlay">
+                        <h3>RECTO VRTU</h3>
+                        <p>carte de visite pour Vertuoso Légumes</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="match-day.jpg" alt="Match Day">
+                    <div class="portfolio-overlay">
+                        <h3>Match Day</h3>
+                        <p>Affiche sportive </p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="portfolio-item" data-category="app">
-                <img src="CAFETUUBAMAJALIS.png"alt="Project 2" class="portfolio-img" >
-                <a href="cafetuubamajalis.online"></a>
-                <div class="portfolio-overlay">
-                    <h3>site vitrine CAFE TUUBA MAJALIS</h3>
-                    <p>site e-commerce complete pour une entreprise </p>
-                    <a href="cafetuubamajalis.online" class="btn-light">cafetuubamajalis</a>
-                </div> 
-            </div>
-            <div class="portfolio-item" data-category="app">
-                <img src="BEAUTEXUNIVERS.png" alt="Project 2" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3>site vitrine BEAUTEX UNIVERS</h3>
-                    <p>site web pour une entreprise de Tissue</p>
-                     <a href="beautexunivers.online" class="btn-light">beautexunivers</a>
-                </div>
-            </div>
-            
-            <div class="portfolio-item" data-category="design">
-                <img src="journee Xassida 2.jpg" alt="Project 3" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3>identité visuelle</h3>
-                    <p>Conception d'une identité visuelle complète pour une entreprise</p>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="design">
-                <img src="AHLU BADR.jpg" alt="Project 3" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3>identité visuelle</h3>
-                    <p>Conception d'une identité visuelle complète pour une entreprise</p>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="design">
-                <img src="messi.jpg" alt="Project 3" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3>identité visuelle</h3>
-                    <p>Conception d'une identité visuelle complète pour une entreprise</p>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="design">
-                <img src="programme journee xassida.jpg" alt="Project 3" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3>identité visuelle</h3>
-                    <p>Conception d'une identité visuelle complète pour une entreprise</p>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="design">
-                <img src="henne salihat shop.jpg" alt="Project 3" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3>identité visuelle</h3>
-                    <p>Conception d'une identité visuelle complète pour une entreprise</p>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="design">
-                <img src="TN TV 2.png" alt="Project 3" class="portfolio-img">
-                <div class="portfolio-overlay">
-                    <h3>identité visuelle</h3>
-                    <p>Conception d'une identité visuelle complète pour une entreprise</p>
-                </div>
-            </div>
-            
-           
-        </div>
         </div>
     </section>
-    
-    <!-- Testimonials Section -->
-    <section class="section" id="testimonials">
+
+    <!-- Stack Technique Section -->
+    <section class="section" id="stack">
         <div class="section-title">
-            <h2>Client Testimonials</h2>
+            <h2>Stack Technique</h2>
         </div>
-        
-        <div class="testimonials-container section-content">
-            <div class="testimonial-card">
-                <img src="avatar.jpg" alt="Client" class="client-img">
-                <div class="client-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+
+        <div class="stack-grid section-content">
+            <div class="stack-category">
+                <h3><i class="fas fa-desktop"></i> Frontend</h3>
+                <div class="stack-items">
+                    <span class="stack-item">HTML5</span>
+                    <span class="stack-item">CSS3</span>
+                    <span class="stack-item">JavaScript ES6+</span>
+                    <span class="stack-item">React.js</span>
+                    <span class="stack-item">TypeScript</span>
+                    <span class="stack-item">Bootstrap</span>
+                    <span class="stack-item">Tailwind CSS</span>
+                    <span class="stack-item">Vite</span>
                 </div>
-                <p>"Cheik Bass Ndiaye est un professionnel exceptionnel. Il a livré notre projet en avance et a dépassé nos attentes. L'attention aux détails et la communication tout au long du processus étaient exceptionnelles."</p>
-                <h4 class="client-name">MAMADOU NDIAYE</h4>
-                <p class="client-role">Client Fidèle</p>
+            </div>
+
+            <div class="stack-category">
+                <h3><i class="fas fa-server"></i> Backend</h3>
+                <div class="stack-items">
+                    <span class="stack-item">PHP</span>
+                    <span class="stack-item">Laravel</span>
+                    <span class="stack-item">Node.js</span>
+                    <span class="stack-item">Express</span>
+                    <span class="stack-item">API REST</span>
+                </div>
+            </div>
+
+            <div class="stack-category">
+                <h3><i class="fas fa-database"></i> Base de données</h3>
+                <div class="stack-items">
+                    <span class="stack-item">MySQL</span>
+                    <span class="stack-item">PostgreSQL</span>
+                    <span class="stack-item">Supabase (BaaS)</span>
+                </div>
+            </div>
+
+            <div class="stack-category">
+                <h3><i class="fas fa-mobile-alt"></i> Mobile</h3>
+                <div class="stack-items">
+                    <span class="stack-item">React Native</span>
+                    <span class="stack-item">Expo</span>
+                    <span class="stack-item">Zustand</span>
+                </div>
+            </div>
+
+            <div class="stack-category">
+                <h3><i class="fas fa-tools"></i> Outils & DevOps</h3>
+                <div class="stack-items">
+                    <span class="stack-item">Git</span>
+                    <span class="stack-item">GitHub</span>
+                    <span class="stack-item">Vercel</span>
+                    <span class="stack-item">Netlify</span>
+                    <span class="stack-item">Railway</span>
+                    <span class="stack-item">Render</span>
+                    <span class="stack-item">VS Code</span>
+                </div>
+            </div>
+
+            <div class="stack-category">
+                <h3><i class="fas fa-paint-brush"></i> Design</h3>
+                <div class="stack-items">
+                    <span class="stack-item">Affinity Designer</span>
+                    <span class="stack-item">Photoshop</span>
+                </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
-    <section class="section" id="contact">
+    <section class="section" id="contact" style="background-color: var(--bg-light);">
         <div class="section-title">
-            <h2>Get In Touch</h2>
+            <h2>Me Contacter</h2>
         </div>
-        
-        <div class="contact-container section-content">
+
+        <div class="contact-wrapper section-content">
             <div class="contact-info">
                 <div class="contact-card">
                     <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="contact-details">
-                        <h3>Location</h3>
-                        <p>sicap mbao/cite Ousmane Fall</p>
+                        <h3>Localisation</h3>
+                        <p>Sicap Mbao, Cité Ousmane Fall — Dakar, Sénégal</p>
                     </div>
                 </div>
-                
+
                 <div class="contact-card">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="contact-details">
                         <h3>Email</h3>
-                        <p>bachirndiaye233@gmail.com</p>
+                        <p>cheikhbass233@gmail.com</p>
                     </div>
                 </div>
-                
+
                 <div class="contact-card">
                     <div class="contact-icon">
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <div class="contact-details">
-                        <h3>Phone</h3>
+                        <h3>Téléphone</h3>
                         <p>+221 77 840 19 04</p>
                     </div>
                 </div>
-                
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>GitHub</h3>
+                        <p>github.com/bachirnjaay02</p>
+                    </div>
+                </div>
+
                 <div class="contact-card">
                     <div class="contact-icon">
                         <i class="fas fa-clock"></i>
                     </div>
                     <div class="contact-details">
-                        <h3>Working Hours</h3>
-                        <p>Mon-Fri: 9H - 18H</p>
+                        <h3>Disponibilité</h3>
+                        <p>Lun–Ven : 9h – 18h</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="contact-form">
+
+            <!-- <div class="contact-form">
                 <form id="form">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name" required>
+                        <input type="text" class="form-control" placeholder="Votre nom" required>
                     </div>
-                    
+
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Your Email" required>
+                        <input type="email" class="form-control" placeholder="Votre email" required>
                     </div>
-                    
+
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Subject">
+                        <input type="text" class="form-control" placeholder="Sujet">
                     </div>
-                    
+
                     <div class="form-group">
-                        <input class="form-control" placeholder="Your Message" required />
+                        <textarea class="form-control" rows="5" placeholder="Votre message" required style="resize:vertical;"></textarea>
                     </div>
-                    
-                    <button type="submit" class="submit-btn">Send Message</button>
+
+                    <button type="submit" class="submit-btn">
+                        
+                        <i class="fas fa-paper-plane" style="margin-right:0.5rem;"></a></i>Envoyer le message
+                    </button>
                 </form>
-            </div>
+            </div> -->
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <a href="#" class="footer-logo">BASSIROU<span>NDIAYE</span></a>
-            
+            <a href="#" class="footer-logo">CHEIKH<span>BASS</span></a>
+
             <ul class="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#experience">Expérience</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            
+
             <div class="footer-social">
-                <a href="https://github.com/BASSIROUNDIAYE233"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/cheikh-bass-ndiaye-739332346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.tiktok.com/@seexbassmajalis"><i class="fab fa-tiktok"></i></a>
-                <a href="https://dribbble.com/seexbassmajalis17_?onboarding=true&designer=true"><i class="fab fa-dribbble"></i></a>
-                <a href="https://www.instagram.com/seexbass_majalis/#"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/bachirnjaay02" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/cheikh-bass-ndiaye-739332346" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.tiktok.com/@seexbassmajalis" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://dribbble.com/seexbassmajalis17_" target="_blank"><i class="fab fa-dribbble"></i></a>
+                <a href="https://www.instagram.com/seexbass_majalis/#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="whatsapp://send?phone=221778401904" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
-            
-            <p class="copyright">© 2025 Bassirou Ndiaye. All Rights Reserved.</p>
+
+            <p class="copyright">© 2026 Serigne Bassirou Ndiaye — Développeur Full Stack Web & Mobile. Tous droits réservés.</p>
         </div>
     </footer>
-    
+
     <!-- Scroll to Top Button -->
     <div class="scroll-top">
         <i class="fas fa-arrow-up"></i>
     </div>
 
-      <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Scripts -->
     <script>
         // Mobile Navigation
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         const links = document.querySelectorAll('.nav-links li');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            
-            // Animate Links
-            links.forEach((link, index) => {
-                if (link.style.animation) {
-                    link.style.animation = '';
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                }
-            });
-        });
-        
-        // Close mobile menu when clicking a link
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-                links.forEach(link => {
-                    link.style.animation = '';
-                });
-            });
-        });
-        
-        // Sticky Header
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            header.classList.toggle('scrolled', window.scrollY > 100);
-        });
-        
-        // Scroll to Top Button
-        const scrollTopBtn = document.querySelector('.scroll-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('active');
-            } else {
-                scrollTopBtn.classList.remove('active');
-            }
-        });
-        
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Portfolio Filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                links.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
                     } else {
-                        item.style.display = 'none';
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
                     }
                 });
             });
-        });
-        
-        // Animate skills on scroll
-        const skillProgress = document.querySelectorAll('.skill-progress');
-        
-        function animateSkills() {
-            skillProgress.forEach(progress => {
-                const width = progress.parentElement.previousElementSibling.lastElementChild.textContent;
-                progress.style.width = width;
-            });
         }
-        
-        // Initialize skills animation when section is in view
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                if (hamburger) hamburger.classList.remove('active');
+                links.forEach(l => { l.style.animation = ''; });
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('active', window.pageYOffset > 300);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                portfolioItems.forEach(item => {
+                    item.style.display = (filter === 'all' || item.getAttribute('data-category') === filter) ? 'block' : 'none';
+                });
+            });
+        });
+
+        // Animate skills on scroll
         const aboutSection = document.getElementById('about');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateSkills();
+                    document.querySelectorAll('.skill-progress').forEach(progress => {
+                        const pct = progress.parentElement.previousElementSibling.lastElementChild.textContent;
+                        progress.style.width = pct;
+                    });
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.2 });
-        
         observer.observe(aboutSection);
-        
-        // Particles.js Configuration
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#6c63ff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#6c63ff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-        
+
         // Form Submission
-        const form = document.getElementById('form');
-        
-        form.addEventListener('submit', (e) => {
+        document.getElementById('form').addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Here you would typically send the form data to a server
-            // For demo purposes, we'll just show an alert
-            alert('Thank you for your message! I will get back to you soon.');
-            form.reset();
+            alert('Merci pour votre message ! Je vous répondrai très bientôt.');
+            e.target.reset();
         });
-        
-        // Smooth scrolling for anchor links
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
             });
         });
     </script>
 </body>
-</html>            
+</html>
