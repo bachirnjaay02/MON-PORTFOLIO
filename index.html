@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheikh Bass Ndiaye | Développeur Full Stack Web & Mobile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         /* About Stats */
@@ -14,13 +17,18 @@
             gap: 2rem;
             margin: 2rem 0;
         }
-        .stat { text-align: center; }
+
+        .stat {
+            text-align: center;
+        }
+
         .stat-number {
             display: block;
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary);
         }
+
         .stat-label {
             font-size: 0.9rem;
             color: #636e72;
@@ -31,6 +39,7 @@
             position: relative;
             padding-left: 3rem;
         }
+
         .timeline::before {
             content: '';
             position: absolute;
@@ -41,10 +50,12 @@
             background: linear-gradient(180deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
+
         .timeline-item {
             position: relative;
             margin-bottom: 2.5rem;
         }
+
         .timeline-dot {
             position: absolute;
             left: -3.4rem;
@@ -56,10 +67,12 @@
             border: 3px solid var(--light);
             box-shadow: 0 0 0 3px var(--primary);
         }
+
         .timeline-dot.education {
             background: var(--accent);
             box-shadow: 0 0 0 3px var(--accent);
         }
+
         .timeline-content {
             background: var(--light);
             border-radius: 15px;
@@ -67,6 +80,7 @@
             box-shadow: 0 5px 20px var(--shadow);
             border: 1px solid #e9ecef;
         }
+
         .timeline-date {
             display: inline-block;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -77,28 +91,33 @@
             font-weight: 600;
             margin-bottom: 1rem;
         }
+
         .timeline-content h3 {
             font-size: 1.4rem;
             color: var(--dark);
             margin-bottom: 0.3rem;
         }
+
         .timeline-content h4 {
             color: var(--primary);
             font-size: 1rem;
             margin-bottom: 1rem;
             font-weight: 500;
         }
+
         .timeline-content ul {
             list-style: none;
             padding: 0;
             margin-bottom: 1rem;
         }
+
         .timeline-content ul li {
             padding: 0.4rem 0;
             padding-left: 1.2rem;
             position: relative;
             color: #636e72;
         }
+
         .timeline-content ul li::before {
             content: '▸';
             position: absolute;
@@ -113,6 +132,7 @@
             gap: 0.5rem;
             margin-top: 1rem;
         }
+
         .tech-tags span {
             background: rgba(6, 4, 136, 0.08);
             color: var(--primary);
@@ -129,6 +149,7 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
+
         .stack-category {
             background: var(--light);
             border-radius: 15px;
@@ -137,24 +158,29 @@
             border: 1px solid #e9ecef;
             transition: var(--transition);
         }
+
         .stack-category:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+
         .stack-category h3 {
             color: var(--dark);
             margin-bottom: 1.2rem;
             font-size: 1.2rem;
         }
+
         .stack-category h3 i {
             color: var(--primary);
             margin-right: 0.5rem;
         }
+
         .stack-items {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
         }
+
         .stack-item {
             background: var(--bg-light);
             color: var(--dark);
@@ -165,6 +191,7 @@
             border: 1px solid #e9ecef;
             transition: var(--transition);
         }
+
         .stack-item:hover {
             background: var(--primary);
             color: white;
@@ -178,6 +205,7 @@
             gap: 0.4rem;
             margin: 0.5rem 0;
         }
+
         .overlay-tags span {
             background: rgba(255, 255, 255, 0.2);
             color: white;
@@ -186,6 +214,7 @@
             font-size: 0.75rem;
             backdrop-filter: blur(5px);
         }
+
         .btn-light {
             display: inline-block;
             margin-top: 0.8rem;
@@ -199,6 +228,7 @@
             text-decoration: none;
             transition: var(--transition);
         }
+
         .btn-light:hover {
             background: white;
             color: var(--primary);
@@ -215,41 +245,66 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .contact-info {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
+
         .contact-info .contact-card {
             flex-direction: column;
             align-items: center;
             text-align: center;
             padding: 2rem 1rem;
         }
+
         .contact-info .contact-card .contact-icon {
             font-size: 2rem;
             margin-right: 0;
             margin-bottom: 1rem;
         }
+
         .contact-info .contact-card .contact-details h3 {
             margin-bottom: 0.4rem;
         }
 
         @media (max-width: 900px) {
-            .contact-info { grid-template-columns: repeat(2, 1fr); }
+            .contact-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (max-width: 768px) {
-            .about-stats { gap: 1rem; }
-            .stat-number { font-size: 1.8rem; }
-            .timeline { padding-left: 2rem; }
-            .timeline-dot { left: -2.4rem; }
-            .contact-info { grid-template-columns: repeat(2, 1fr); }
+            .about-stats {
+                gap: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-dot {
+                left: -2.4rem;
+            }
+
+            .contact-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (max-width: 480px) {
-            .contact-info { grid-template-columns: 1fr; }
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header id="header">
@@ -261,6 +316,7 @@
             <li><a href="#experience">Expérience</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -277,7 +333,9 @@
             <div class="hero-text">
                 <h4>Bonjour, Je suis</h4>
                 <h1>Cheikh Bass Ndiaye <span>Développeur Full Stack</span></h1>
-                <p>Développeur Full Stack Web & Mobile diplômé de Bakeli School of Technology. Je construis des applications performantes, des interfaces responsives et des API robustes pour des PME et communautés sénégalaises.</p>
+                <p>Développeur Full Stack Web & Mobile diplômé de Bakeli School of Technology. Je construis des
+                    applications performantes, des interfaces responsives et des API robustes pour des PME et
+                    communautés sénégalaises.</p>
                 <div class="hero-btns">
                     <a href="#portfolio" class="btn btn-primary">Voir mes projets</a>
                     <a href="#contact" class="btn btn-secondary">Me contacter</a>
@@ -288,12 +346,19 @@
                 <img src="code.png" alt="Cheikh Bass Ndiaye — Développeur Full Stack">
 
                 <div class="social-links">
-                    <a href="https://github.com/bachirnjaay02" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/cheikh-bass-ndiaye-739332346" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://dribbble.com/seexbassmajalis17_" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a>
-                    <a href="https://www.instagram.com/seexbass_majalis/#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/bachirnjaay02" target="_blank" title="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/cheikh-bass-ndiaye-739332346" target="_blank"
+                        title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://dribbble.com/seexbassmajalis17_" target="_blank" title="Dribbble"><i
+                            class="fab fa-dribbble"></i></a>
+                    <a href="https://www.tiktok.com/@seexbasscode" target="_blank"><i class="fab fa-tiktok"></i></a>
+
+                    <a href="https://www.instagram.com/seexbass_majalis/#" target="_blank" title="Instagram"><i
+                            class="fab fa-instagram"></i></a>
                     <!-- message sur mon whatsapp -->
-                     <a href="whatsapp://send?phone=221778401904" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="whatsapp://send?phone=221778401904" target="_blank" title="WhatsApp"><i
+                            class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -312,8 +377,12 @@
 
             <div class="about-text">
                 <h3>Développeur Full Stack Web & Mobile</h3>
-                <p>Certifié par<strong>Bakeli School of Technology</strong>, avec une expérience pratique acquise en stage chez <strong>VOLKENO</strong> et plusieurs projets freelance livrés pour des PME et communautés sénégalaises.</p>
-                <p>Je maîtrise le cycle complet de développement : interfaces responsives (React.js, Bootstrap, Tailwind), API robustes (PHP/Laravel, Node.js), bases de données (MySQL, PostgreSQL, Supabase) et déploiement (Netlify, Vercel, Railway, Render).</p>
+                <p>Certifié par<strong>Bakeli School of Technology</strong>, avec une expérience pratique acquise en
+                    stage chez <strong>VOLKENO</strong> et plusieurs projets freelance livrés pour des PME et
+                    communautés sénégalaises.</p>
+                <p>Je maîtrise le cycle complet de développement : interfaces responsives (React.js, Bootstrap,
+                    Tailwind), API robustes (PHP/Laravel, Node.js), bases de données (MySQL, PostgreSQL, Supabase) et
+                    déploiement (Netlify, Vercel, Railway, Render).</p>
 
                 <div class="about-stats">
                     <div class="stat">
@@ -382,7 +451,8 @@
                     </div>
                 </div>
 
-                <a href="CV CHEIKHBASSCODE_devfullstack.pdf" class="btn btn-primary" download style="margin-top: 2rem; display: inline-block;">
+                <a href="CV CHEIKHBASSCODE_devfullstack.pdf" class="btn btn-primary" download
+                    style="margin-top: 2rem; display: inline-block;">
                     <i class="fas fa-download" style="margin-right: 0.5rem;"></i>Télécharger mon CV
                 </a>
             </div>
@@ -399,18 +469,30 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date"><i class="fas fa-briefcase" style="margin-right:0.4rem;"></i>2024 – Présent</span>
+                    <span class="timeline-date"><i class="fas fa-briefcase" style="margin-right:0.4rem;"></i>2024 –
+                        Présent</span>
                     <h3>Développeur Full Stack — Freelance</h3>
                     <h4>Dakar, Sénégal</h4>
                     <ul>
-                        <li>Développement de <strong>Leer-Xassida.online</strong> : PWA de lecture de poésie Soufie multilingue (arabe, wolof, français) avec service worker et mode hors-ligne.</li>
-                        <li>Création de <strong>Ndiggël App</strong> : plateforme de gestion financière pour dahiras et tontines avec intégration paiement PayTech (IPN callbacks).</li>
-                        <li>Livraison de <strong>Vertuoso Légumes</strong> : e-commerce complet avec panel admin, gestion des commandes WhatsApp et localStorage.</li>
-                        <li>Développement de sites e-commerces : <strong>beautex-univers.online</strong>, <strong>cafetuubamajalis.online</strong>, <strong>majalis-store.vercel.app</strong>.</li>
-                        <li>Application mobile HTML5/CSS/JavaScript pour un Dahira : <strong>app-dma.netlify.app</strong>.</li>
+                        <li>Développement de <strong>Leer-Xassida.online</strong> : PWA de lecture de poésie Soufie
+                            multilingue (arabe, wolof, français) avec service worker et mode hors-ligne.</li>
+                        <li>Création de <strong>Ndiggël App</strong> : plateforme de gestion financière pour dahiras et
+                            tontines avec intégration paiement PayTech (IPN callbacks).</li>
+                        <li>Livraison de <strong>Vertuoso Légumes</strong> : e-commerce complet avec panel admin,
+                            gestion des commandes WhatsApp et localStorage.</li>
+                        <li>Développement de sites e-commerces : <strong>beautex-univers.online</strong>,
+                            <strong>cafetuubamajalis.online</strong>, <strong>majalis-store.vercel.app</strong>.
+                        </li>
+                        <li>Application mobile HTML5/CSS/JavaScript pour un Dahira :
+                            <strong>app-dma.netlify.app</strong>.
+                        </li>
+                        <li>Application mobile Django/htmlCSS pour le tournoi de navetanes :
+                            <strong>Navetane digitale</strong>.
+                        </li>
                     </ul>
                     <div class="tech-tags">
-                        <span>React.js</span><span>Laravel</span><span>Supabase</span><span>MySQL</span><span>TypeScript</span><span>React Native</span><span>Bootstrap</span>
+                        <span>React.js</span><span>Laravel</span><span>Supabase</span><span>MySQL</span><span>TypeScript</span><span>React
+                            Native</span><span>Bootstrap</span>
                     </div>
                 </div>
             </div>
@@ -418,7 +500,8 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date"><i class="fas fa-briefcase" style="margin-right:0.4rem;"></i>2026 — 3 mois</span>
+                    <span class="timeline-date"><i class="fas fa-briefcase" style="margin-right:0.4rem;"></i>2026 — 3
+                        mois</span>
                     <h3>Stagiaire Développeur Web</h3>
                     <h4>VOLKENO — Dakar, Sénégal</h4>
                     <ul>
@@ -436,7 +519,8 @@
             <div class="timeline-item">
                 <div class="timeline-dot education"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>2026</span>
+                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i
+                            class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>2026</span>
                     <h3>Certification Développeur Full Stack</h3>
                     <h4>Bakeli School of Technology — Dakar, Sénégal</h4>
                 </div>
@@ -445,7 +529,8 @@
             <div class="timeline-item">
                 <div class="timeline-dot education"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>En cours</span>
+                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i
+                            class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>En cours</span>
                     <h3>Certifications freeCodeCamp</h3>
                     <h4>En ligne</h4>
                     <ul>
@@ -458,7 +543,8 @@
             <div class="timeline-item">
                 <div class="timeline-dot education"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>2025</span>
+                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i
+                            class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>2025</span>
                     <h3>Baccalauréat Série S2 — Sciences Exactes</h3>
                     <h4>Lycée — Dakar, Sénégal</h4>
                     <span class="timeline-badge" style="color: #5a5858;">candidat libre</span>
@@ -479,7 +565,8 @@
                     <i class="fas fa-code"></i>
                 </div>
                 <h3>Développement Web Full Stack</h3>
-                <p>Création de sites web et applications web complètes : interfaces React.js responsives, API Laravel/Node.js robustes, bases de données MySQL/PostgreSQL.</p>
+                <p>Création de sites web et applications web complètes : interfaces React.js responsives, API
+                    Laravel/Node.js robustes, bases de données MySQL/PostgreSQL.</p>
             </div>
 
             <div class="service-card">
@@ -487,7 +574,8 @@
                     <i class="fas fa-mobile-alt"></i>
                 </div>
                 <h3>Applications Mobile</h3>
-                <p>Développement d'applications mobiles cross-platform avec React Native et Expo pour iOS et Android, avec accès aux fonctionnalités natives.</p>
+                <p>Développement d'applications mobiles cross-platform avec React Native et Expo pour iOS et Android,
+                    avec accès aux fonctionnalités natives.</p>
             </div>
 
             <div class="service-card">
@@ -495,7 +583,8 @@
                     <i class="fas fa-shopping-cart"></i>
                 </div>
                 <h3>E-commerce</h3>
-                <p>Boutiques en ligne complètes avec panel admin, gestion des commandes, intégration paiement PayTech et modes de paiement offline.</p>
+                <p>Boutiques en ligne complètes avec panel admin, gestion des commandes, intégration paiement PayTech et
+                    modes de paiement offline.</p>
             </div>
 
             <div class="service-card">
@@ -503,7 +592,8 @@
                     <i class="fas fa-server"></i>
                 </div>
                 <h3>API & Backend</h3>
-                <p>Conception d'API REST performantes avec PHP/Laravel ou Node.js/Express, déploiement sur Vercel, Railway ou Render.</p>
+                <p>Conception d'API REST performantes avec PHP/Laravel ou Node.js/Express, déploiement sur Vercel,
+                    Railway ou Render.</p>
             </div>
 
             <div class="service-card">
@@ -511,7 +601,8 @@
                     <i class="fas fa-paint-brush"></i>
                 </div>
                 <h3>Design Graphique</h3>
-                <p>Création d'identités visuelles, logos, affiches et supports de communication professionnels avec Affinity Designer et Photoshop.</p>
+                <p>Création d'identités visuelles, logos, affiches et supports de communication professionnels avec
+                    Affinity Designer et Photoshop.</p>
             </div>
 
             <div class="service-card">
@@ -519,7 +610,8 @@
                     <i class="fas fa-search"></i>
                 </div>
                 <h3>Optimisation SEO</h3>
-                <p>Amélioration du positionnement dans les résultats de recherche avec des stratégies SEO éprouvées et des techniques d'optimisation efficaces.</p>
+                <p>Amélioration du positionnement dans les résultats de recherche avec des stratégies SEO éprouvées et
+                    des techniques d'optimisation efficaces.</p>
             </div>
         </div>
     </section>
@@ -544,16 +636,20 @@
                     <div class="portfolio-overlay">
                         <h3>Leer-Xassida.online</h3>
                         <p>PWA de lecture de poésie Soufie multilingue (arabe, wolof, français) avec mode hors-ligne</p>
-                        <div class="overlay-tags"><span>React.js</span><span>PWA</span><span>Supabase</span><span>Netlify</span></div>
+                        <div class="overlay-tags">
+                            <span>React.js</span><span>PWA</span><span>Supabase</span><span>Netlify</span>
+                        </div>
                         <a href="https://leer-xassida.vercel.app/" target="_blank" class="btn-light">Voir le site →</a>
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="mobile">
-                    <img src="leer-xassida.png" alt="Leer Xassida">
+                    <img src="leer-landing.jpeg" alt="Leer Landing">
                     <div class="portfolio-overlay">
                         <h3>Leer-Landing.online</h3>
                         <p>Site de destination pour présenter les services et produits de Leer Xassida</p>
-                        <div class="overlay-tags"><span>React.js</span><span>PWA</span><span>Supabase</span><span>Netlify</span></div>
+                        <div class="overlay-tags">
+                            <span>React.js</span><span>PWA</span><span>Supabase</span><span>Netlify</span>
+                        </div>
                         <a href="https://leer-landing.vercel.app/" target="_blank" class="btn-light">Voir le site →</a>
                     </div>
                 </div>
@@ -562,13 +658,17 @@
                     <img src="ndiggel-app.png" alt="Ndiggël App">
                     <div class="portfolio-overlay">
                         <h3>Ndiggël App</h3>
-                        <p>Plateforme de gestion financière pour dahiras et tontines avec intégration paiement PayTech</p>
-                        <div class="overlay-tags"><span>React.js</span><span>TypeScript</span><span>Supabase</span><span>Node.js</span></div>
+                        <p>Plateforme de gestion financière pour dahiras et tontines avec intégration paiement PayTech
+                        </p>
+                        <div class="overlay-tags">
+                            <span>React.js</span><span>TypeScript</span><span>Supabase</span><span>Node.js</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="portfolio-item" data-category="web">
-                    <img src="CAFETUUBAMAJALIS.png" alt="Cafe Tuuba Majalis" onerror="this.src='https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&h=400&fit=crop&auto=format'">
+                    <img src="CAFETUUBAMAJALIS.png" alt="Cafe Tuuba Majalis"
+                        onerror="this.src='https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&h=400&fit=crop&auto=format'">
                     <div class="portfolio-overlay">
                         <h3>Cafe Tuuba Majalis</h3>
                         <p>Site e-commerce complet pour une entreprise de café sénégalaise</p>
@@ -578,7 +678,8 @@
                 </div>
 
                 <div class="portfolio-item" data-category="web">
-                    <img src="BEAUTEXUNIVERS.png" alt="Beautex Univers" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&auto=format'">
+                    <img src="BEAUTEXUNIVERS.png" alt="Beautex Univers"
+                        onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&auto=format'">
                     <div class="portfolio-overlay">
                         <h3>Beautex Univers</h3>
                         <p>Site e-commerce pour une entreprise de tissus</p>
@@ -592,7 +693,9 @@
                     <div class="portfolio-overlay">
                         <h3>Vertuoso Légumes</h3>
                         <p>E-commerce légumes Dakar — commandes WhatsApp, panel admin, paiement offline</p>
-                        <div class="overlay-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>LocalStorage</span></div>
+                        <div class="overlay-tags">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>LocalStorage</span>
+                        </div>
                     </div>
                 </div>
 
@@ -615,14 +718,30 @@
                         <a href="https://app-dma.vercel.app" target="_blank" class="btn-light">Voir l'app →</a>
                     </div>
                 </div>
-
+                <div class="portfolio-item navetane-card" data-category="mobile">
+                    <div class="navetane-gallery" aria-label="Aperçu des écrans de l'application Navétane">
+                        <div class="navetane-track">
+                            <img src="navetane 1.png" alt="Écran d'accueil de l'application Navétane">
+                            <img src="navetane 2.png" alt="Écran des résultats de l'application Navétane">
+                        </div>
+                        <div class="navetane-dots" aria-hidden="true"><span></span><span></span></div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Application Navétane</h3>
+                        <p>Application mobile pour le tournoi de navetanes.
+                            un solution pour adapter les horaires des matchs, les résultats et les classements du
+                            tournoi en temps réel.
+                        </p>
+                    </div>
+                </div>
                 <div class="portfolio-item" data-category="mobile">
                     <img src="seexbass&magou app.jpg" alt="Seexbass & Magou App">
                     <div class="portfolio-overlay">
                         <h3>Seexbass & Magou</h3>
                         <p>Application mobile — projet personnel</p>
                         <div class="overlay-tags"><span>React Native</span><span>Expo</span></div>
-                        <a href="https://seexbass-magou.vercel.app" target="_blank" class="btn-light">Voir le projet →</a>
+                        <a href="https://seexbass-magou.vercel.app" target="_blank" class="btn-light">Voir le projet
+                            →</a>
                     </div>
                 </div>
 
@@ -663,6 +782,7 @@
                         <p>Affiche sportive </p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -742,6 +862,97 @@
                     <span class="stack-item">Capcut</span>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section certifications-section" id="certifications">
+        <div class="section-title">
+            <h2>Mes Certifications</h2>
+            <p class="section-intro">Des formations complémentaires qui renforcent mes compétences en développement,
+                API, données et marketing digital.</p>
+        </div>
+
+        <div class="certifications-grid section-content">
+            <article class="certification-card">
+                <div class="certification-icon"><i class="fab fa-python"></i></div>
+                <div class="certification-content">
+                    <span class="certification-category">Data & Python</span>
+                    <h3>Analyse de données avec Python</h3>
+                    <p>Analyse et exploitation de données avec le langage Python.</p>
+                    <div class="certification-actions">
+                        <a href="certificat-analyse-de-donn-es-avec-le-langage-python.pdf" target="_blank"
+                            rel="noopener" class="certification-link">Voir le certificat <i
+                                class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="certificat-analyse-de-donn-es-avec-le-langage-python.pdf" download
+                            aria-label="Télécharger le certificat Python"><i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="certification-card">
+                <div class="certification-icon"><i class="fab fa-js"></i></div>
+                <div class="certification-content">
+                    <span class="certification-category">Développement</span>
+                    <h3>Certification JavaScript</h3>
+                    <p>Fondamentaux et pratique du développement JavaScript.</p>
+                    <div class="certification-actions">
+                        <a href="certificat-javascript.pdf" target="_blank" rel="noopener"
+                            class="certification-link">Voir le certificat <i
+                                class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="certificat-javascript.pdf" download
+                            aria-label="Télécharger le certificat JavaScript"><i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="certification-card">
+                <div class="certification-icon"><i class="fas fa-code-branch"></i></div>
+                <div class="certification-content">
+                    <span class="certification-category">Architecture & API</span>
+                    <h3>API REST, GraphQL & microservices</h3>
+                    <p>Conception et développement d’architectures backend modernes.</p>
+                    <div class="certification-actions">
+                        <a href="certificat-conception-et-d-veloppement-d-api-rest-graphql-et-microservices.pdf"
+                            target="_blank" rel="noopener" class="certification-link">Voir le certificat <i
+                                class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="certificat-conception-et-d-veloppement-d-api-rest-graphql-et-microservices.pdf"
+                            download aria-label="Télécharger le certificat API"><i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="certification-card">
+                <div class="certification-icon"><i class="fab fa-git-alt"></i></div>
+                <div class="certification-content">
+                    <span class="certification-category">Outils & collaboration</span>
+                    <h3>Les bases de Git</h3>
+                    <p>Gestion de versions et bonnes pratiques de collaboration.</p>
+                    <div class="certification-actions">
+                        <a href="certificat-les-bases-de-git.pdf" target="_blank" rel="noopener"
+                            class="certification-link">Voir le certificat <i
+                                class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="certificat-les-bases-de-git.pdf" download aria-label="Télécharger le certificat Git"><i
+                                class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="certification-card">
+                <div class="certification-icon"><i class="fas fa-bullhorn"></i></div>
+                <div class="certification-content">
+                    <span class="certification-category">Marketing digital</span>
+                    <h3>Fondamentaux du marketing digital</h3>
+                    <p>Compréhension des leviers du marketing digital en entreprise.</p>
+                    <div class="certification-actions">
+                        <a href="certificat-comprendre-les-fondamentaux-du-marketing-digital-en-entreprise.pdf"
+                            target="_blank" rel="noopener" class="certification-link">Voir le certificat <i
+                                class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="certificat-comprendre-les-fondamentaux-du-marketing-digital-en-entreprise.pdf" download
+                            aria-label="Télécharger le certificat marketing digital"><i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -847,20 +1058,35 @@
 
             <div class="footer-social">
                 <a href="https://github.com/bachirnjaay02" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/cheikh-bass-ndiaye-739332346" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.tiktok.com/@seexbassmajalis" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/in/cheikh-bass-ndiaye-739332346" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.tiktok.com/@seexbasscode" target="_blank"><i class="fab fa-tiktok"></i></a>
                 <a href="https://dribbble.com/seexbassmajalis17_" target="_blank"><i class="fab fa-dribbble"></i></a>
-                <a href="https://www.instagram.com/seexbass_majalis/#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/seexbass_majalis/#" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
                 <a href="whatsapp://send?phone=221778401904" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
 
-            <p class="copyright">© 2026 Serigne Bassirou Ndiaye — Développeur Full Stack Web & Mobile. Tous droits réservés.</p>
+            <p class="copyright">© 2026 Serigne Bassirou Ndiaye — Développeur Full Stack Web & Mobile. Tous droits
+                réservés.</p>
         </div>
     </footer>
 
     <!-- Scroll to Top Button -->
     <div class="scroll-top">
         <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Image Lightbox -->
+    <div class="image-lightbox" id="image-lightbox" role="dialog" aria-modal="true" aria-label="Aperçu de l'image"
+        aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Fermer l'aperçu">
+            <i class="fas fa-xmark"></i>
+        </button>
+        <figure class="lightbox-figure">
+            <img class="lightbox-image" src="" alt="">
+            <figcaption class="lightbox-caption"></figcaption>
+        </figure>
     </div>
 
     <!-- Scripts -->
@@ -921,6 +1147,49 @@
             });
         });
 
+        // Portfolio image lightbox
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+        const portfolioImages = document.querySelectorAll('.portfolio-item img');
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('is-visible');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('lightbox-open');
+        };
+
+        const openLightbox = (image) => {
+            lightboxImage.src = image.currentSrc || image.src;
+            lightboxImage.alt = image.alt;
+            lightboxCaption.textContent = image.alt;
+            lightbox.classList.add('is-visible');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('lightbox-open');
+            lightboxClose.focus();
+        };
+
+        portfolioImages.forEach(image => {
+            image.setAttribute('tabindex', '0');
+            image.setAttribute('role', 'button');
+            image.addEventListener('click', () => openLightbox(image));
+            image.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openLightbox(image);
+                }
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && lightbox.classList.contains('is-visible')) closeLightbox();
+        });
+
         // Animate skills on scroll
         const aboutSection = document.getElementById('about');
         const observer = new IntersectionObserver((entries) => {
@@ -945,7 +1214,7 @@
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
@@ -953,4 +1222,5 @@
         });
     </script>
 </body>
+
 </html>
