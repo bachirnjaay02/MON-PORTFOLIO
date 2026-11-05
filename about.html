@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos | Cheikh Bass Ndiaye</title>
+    <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cb-theme')||'light')}catch(e){}</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sections.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="logo">CHEIKH<span>BASS</span><span style="color: gray;"> code</span></a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html" class="active">À propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Basculer le thème clair / sombre">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Bandeau de page -->
+    <div class="page-hero">
+        <div class="page-hero-content">
+            <span class="page-kicker"><span class="prompt">&gt;</span>à propos de moi</span>
+            <h1>Cheikh Bass <span class="dim">Ndiaye</span></h1>
+            <p class="page-sub">Full Stack Web & Mobile — transformer des idées claires, modernes et qui ont du sens en
+                expériences digitales.</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-title" data-label="About Me">
+            <h2>Qui je suis</h2>
+        </div>
+
+        <div class="about-content section-content">
+            <div class="about-image">
+                <img src="assets/images/seexbassdev.png" alt="Cheikh Bass Ndiaye">
+            </div>
+
+            <div class="about-text">
+                <h3>Développeur Full Stack Web & Mobile</h3>
+                <p>Certifié par<strong>Bakeli School of Technology</strong>, avec une expérience pratique acquise en
+                    stage chez <strong>VOLKENO</strong> et plusieurs projets freelance livrés pour des PME et
+                    communautés sénégalaises.</p>
+                <p>Je maîtrise le cycle complet de développement : interfaces responsives (React.js, Bootstrap,
+                    Tailwind), API robustes (PHP/Laravel, Node.js), bases de données (MySQL, PostgreSQL, Supabase) et
+                    déploiement (Netlify, Vercel, Railway, Render).</p>
+
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Ans d'expérience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Projets livrés</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                </div>
+
+                <div class="skills">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Frontend (React.js / HTML / CSS)</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Backend (PHP / Laravel / Node.js/ Django)</span>
+                            <span>82%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Bases de données (MySQL / PostgreSQL / Supabase)</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Mobile (React Native / flutter)</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Design (Affinity Designer / Photoshop / Illustrator / Canva / Capcut)</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="assets/documents/CV CHEIKHBASSCODE_devfullstack.pdf" class="btn-mini btn-mini-black"
+                    download style="margin-top: 2rem;">
+                    <i class="fas fa-download"></i>Télécharger mon CV
+                </a>
+                <a href="portfolio.html" class="btn-mini btn-mini-light" style="margin-top: 2rem;">
+                    <i class="fas fa-play"></i>Voir mes projets
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section class="section" id="experience" style="background-color: var(--bg-light);">
+        <div class="section-title" data-label="Experience">
+            <h2>Expérience & Formation</h2>
+        </div>
+
+        <div class="timeline section-content">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date"><i class="fas fa-briefcase" style="margin-right:0.4rem;"></i>2024 –
+                        Présent</span>
+                    <h3>Développeur Full Stack — Freelance</h3>
+                    <h4>Dakar, Sénégal</h4>
+                    <ul>
+                        <li>Développement de <strong>Leer-Xassida.online</strong> : PWA de lecture de poésie Soufie
+                            multilingue (arabe, wolof, français) avec service worker et mode hors-ligne.</li>
+                        <li>Création de <strong>Ndiggël App</strong> : plateforme de gestion financière pour dahiras et
+                            tontines avec intégration paiement PayTech (IPN callbacks).</li>
+                        <li>Livraison de <strong>Vertuoso Légumes</strong> : e-commerce complet avec panel admin,
+                            gestion des commandes WhatsApp et localStorage.</li>
+                        <li>Développement de sites e-commerces : <strong>beautex-univers.online</strong>,
+                            <strong>cafetuubamajalis.online</strong>, <strong>majalis-store.vercel.app</strong>.
+                        </li>
+                        <li>Application mobile HTML5/CSS/JavaScript pour un Dahira :
+                            <strong>app-dma.netlify.app</strong>.
+                        </li>
+                        <li>Application mobile Django/htmlCSS pour le tournoi de navetanes :
+                            <strong>Navetane digitale</strong>.
+                        </li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>React.js</span><span>Laravel</span><span>Supabase</span><span>MySQL</span><span>TypeScript</span><span>React
+                            Native</span><span>Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date"><i class="fas fa-briefcase" style="margin-right:0.4rem;"></i>2026 — 3
+                        mois</span>
+                    <h3>Stagiaire Développeur Web</h3>
+                    <h4>VOLKENO — Dakar, Sénégal</h4>
+                    <ul>
+                        <li>Participation au développement d'applications web client en PHP/Laravel et JavaScript.</li>
+                        <li>Intégration d'interfaces responsives avec Bootstrap et CSS3 sur des projets internes.</li>
+                        <li>Collaboration en équipe Agile (sprints, revues de code, Git/GitHub).</li>
+                        <li>Contribution à la conception et maintenance de bases de données MySQL.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>PHP</span><span>Laravel</span><span>Bootstrap</span><span>JavaScript</span><span>MySQL</span><span>Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot education"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i
+                            class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>2026</span>
+                    <h3>Certification Développeur Full Stack</h3>
+                    <h4>Bakeli School of Technology — Dakar, Sénégal</h4>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot education"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i
+                            class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>En cours</span>
+                    <h3>Certifications freeCodeCamp</h3>
+                    <h4>En ligne</h4>
+                    <ul>
+                        <li>Certification Développeur JavaScript</li>
+                        <li>Certification Développeur Python</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot education"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i
+                            class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>2025</span>
+                    <h3>Baccalauréat Série S2 — Sciences Exactes</h3>
+                    <h4>Lycée — Dakar, Sénégal</h4>
+                    <span class="timeline-badge" style="color: #5a5858;">candidat libre</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="index.html" class="footer-logo">CHEIKH<span>BASS</span></a>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="footer-social">
+                <a href="https://github.com/bachirnjaay02" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/cheikh-bass-ndiaye-739332346" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.tiktok.com/@seexbasscode" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://dribbble.com/seexbassmajalis17_" target="_blank"><i class="fab fa-dribbble"></i></a>
+                <a href="https://www.instagram.com/seexbass_majalis/#" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="whatsapp://send?phone=221778401904" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <p class="copyright">© 2026 Serigne Bassirou Ndiaye — Développeur Full Stack Web & Mobile. Tous droits
+                réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // ===== Thème sombre/clair (bouton header, mémorisé) =====
+        const themeBtn = document.getElementById('theme-toggle');
+        if (themeBtn) {
+            const themeIcon = themeBtn.querySelector('i');
+            const paintThemeIcon = () => {
+                themeIcon.className = document.documentElement.getAttribute('data-theme') === 'dark'
+                    ? 'fas fa-sun'
+                    : 'fas fa-moon';
+            };
+            paintThemeIcon();
+            themeBtn.addEventListener('click', () => {
+                const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('cb-theme', next); } catch (err) { }
+                paintThemeIcon();
+            });
+        }
+
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links li');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                links.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+            });
+        }
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                if (hamburger) hamburger.classList.remove('active');
+                links.forEach(l => { l.style.animation = ''; });
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('active', window.pageYOffset > 300);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== Révélations au scroll (style vidéo : apparitions en cascade) =====
+        const revealTargets = [
+            ...document.querySelectorAll('.section-title'),
+            ...document.querySelectorAll('.about-content > *'),
+            ...document.querySelectorAll('.about-stats .stat'),
+            ...document.querySelectorAll('.timeline-item'),
+            ...document.querySelectorAll('.service-card'),
+            ...document.querySelectorAll('.portfolio-item'),
+            ...document.querySelectorAll('.stack-category'),
+            ...document.querySelectorAll('.certification-card'),
+            ...document.querySelectorAll('.contact-card')
+        ];
+
+        revealTargets.forEach(el => el.classList.add('reveal-item'));
+
+        // décalage en cascade à l'intérieur de chaque parent visible en même temps
+        document.querySelectorAll('.section, .about-content, .portfolio-grid, .services-grid, .stack-grid, .certifications-grid, .contact-info, .about-stats, .timeline').forEach(container => {
+            container.querySelectorAll('.reveal-item').forEach((el, i) => {
+                el.style.setProperty('--reveal-delay', `${(i % 6) * 0.09}s`);
+            });
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        revealTargets.forEach(el => revealObserver.observe(el));
+
+        // ===== Compteurs animés (3+, 10+, 8+) =====
+        const animateCounter = (el) => {
+            const text = el.textContent;
+            const match = text.match(/(\d+)(.*)/);
+            if (!match) return;
+            const target = parseInt(match[1], 10);
+            const suffix = match[2] || '';
+            const duration = 1300;
+            const start = performance.now();
+
+            const tick = (now) => {
+                const p = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(target * eased) + suffix;
+                if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        };
+
+        const statsEl = document.querySelector('.about-stats');
+        if (statsEl) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        entry.target.querySelectorAll('.stat-number').forEach((num, i) => {
+                            setTimeout(() => animateCounter(num), i * 180);
+                        });
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+            statsObserver.observe(statsEl);
+        }
+
+        // ===== Barres de compétences animées =====
+        const skillsEl = document.querySelector('.skills');
+        if (skillsEl) {
+            const skillsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        skillsEl.querySelectorAll('.skill-progress').forEach(progress => {
+                            const pct = progress.parentElement.previousElementSibling.lastElementChild.textContent;
+                            progress.style.width = pct;
+                        });
+                        skillsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            skillsObserver.observe(skillsEl);
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -5,313 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheikh Bass Ndiaye | Développeur Full Stack Web & Mobile</title>
+    <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cb-theme')||'light')}catch(e){}</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        /* About Stats */
-        .about-stats {
-            display: flex;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: #636e72;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--primary), var(--secondary));
-            border-radius: 2px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2.5rem;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -3.4rem;
-            top: 0.5rem;
-            width: 18px;
-            height: 18px;
-            background: var(--primary);
-            border-radius: 50%;
-            border: 3px solid var(--light);
-            box-shadow: 0 0 0 3px var(--primary);
-        }
-
-        .timeline-dot.education {
-            background: var(--accent);
-            box-shadow: 0 0 0 3px var(--accent);
-        }
-
-        .timeline-content {
-            background: var(--light);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px var(--shadow);
-            border: 1px solid #e9ecef;
-        }
-
-        .timeline-date {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-content h3 {
-            font-size: 1.4rem;
-            color: var(--dark);
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-content h4 {
-            color: var(--primary);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .timeline-content ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-content ul li {
-            padding: 0.4rem 0;
-            padding-left: 1.2rem;
-            position: relative;
-            color: #636e72;
-        }
-
-        .timeline-content ul li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-        }
-
-        /* Tech Tags */
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tech-tags span {
-            background: rgba(6, 4, 136, 0.08);
-            color: var(--primary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            border: 1px solid rgba(6, 4, 136, 0.2);
-        }
-
-        /* Stack Grid */
-        .stack-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .stack-category {
-            background: var(--light);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px var(--shadow);
-            border: 1px solid #e9ecef;
-            transition: var(--transition);
-        }
-
-        .stack-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .stack-category h3 {
-            color: var(--dark);
-            margin-bottom: 1.2rem;
-            font-size: 1.2rem;
-        }
-
-        .stack-category h3 i {
-            color: var(--primary);
-            margin-right: 0.5rem;
-        }
-
-        .stack-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .stack-item {
-            background: var(--bg-light);
-            color: var(--dark);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid #e9ecef;
-            transition: var(--transition);
-        }
-
-        .stack-item:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        /* Overlay Tags & btn-light */
-        .overlay-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin: 0.5rem 0;
-        }
-
-        .overlay-tags span {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 0.2rem 0.6rem;
-            border-radius: 10px;
-            font-size: 0.75rem;
-            backdrop-filter: blur(5px);
-        }
-
-        .btn-light {
-            display: inline-block;
-            margin-top: 0.8rem;
-            padding: 0.5rem 1.2rem;
-            background: rgba(255, 255, 255, 0.25);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .btn-light:hover {
-            background: white;
-            color: var(--primary);
-        }
-
-        /* Section1 pour portfolio */
-        .section1 {
-            padding: 6rem 5%;
-            background-color: var(--bg-light);
-        }
-
-        /* Contact — grille 3 colonnes, icône centrée */
-        .contact-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .contact-info .contact-card {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-
-        .contact-info .contact-card .contact-icon {
-            font-size: 2rem;
-            margin-right: 0;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info .contact-card .contact-details h3 {
-            margin-bottom: 0.4rem;
-        }
-
-        @media (max-width: 900px) {
-            .contact-info {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .about-stats {
-                gap: 1rem;
-            }
-
-            .stat-number {
-                font-size: 1.8rem;
-            }
-
-            .timeline {
-                padding-left: 2rem;
-            }
-
-            .timeline-dot {
-                left: -2.4rem;
-            }
-
-            .contact-info {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/sections.css">
 </head>
 
 <body>
+    <!-- Intro plein écran (une fois par session) -->
+    <div class="intro-overlay" id="intro" aria-hidden="true">
+        <div class="intro-glow g1"></div>
+        <div class="intro-glow g2"></div>
+        <div class="intro-glow g3"></div>
+        <div class="intro-inner">
+            <div class="intro-photo">
+                <div class="intro-ring"></div>
+                <img src="assets/images/intro-photo.jpg" alt="Cheikh Bass Ndiaye">
+                <div class="intro-scan"></div>
+            </div>
+            <div class="intro-name">Cheikh Bass Ndiaye</div>
+            <p class="intro-role"><span class="prompt">&gt;</span> <span class="intro-typed"></span><span
+                    class="intro-caret">▌</span></p>
+        </div>
+        <button class="intro-skip" type="button" aria-label="Passer l'intro et entrer sur le site">CLIQUER POUR ENTRER</button>
+    </div>
+
     <!-- Header -->
     <header id="header">
-        <a href="#home" class="logo">CHEIKH<span>BASS</span><span style="color: gray;"> code</span></a>
+        <a href="index.html" class="logo">CHEIKH<span>BASS</span><span style="color: gray;"> code</span></a>
 
         <ul class="nav-links">
-            <li><a href="#home">Accueil</a></li>
+            <li><a href="#home" class="active">Accueil</a></li>
             <li><a href="#about">À propos</a></li>
             <li><a href="#experience">Expérience</a></li>
             <li><a href="#services">Services</a></li>
@@ -319,6 +46,10 @@
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Basculer le thème clair / sombre">
+            <i class="fas fa-moon"></i>
+        </button>
 
         <div class="hamburger">
             <div></div>
@@ -329,16 +60,39 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <!-- Badge ID pendante (animation style lanyard) -->
+        <div class="id-badge" aria-hidden="true">
+            <div class="id-assembly">
+                <div class="lanyard"></div>
+                <div class="lanyard-clip"></div>
+                <div class="id-card">
+                    <div class="id-photo">
+                        <img src="assets/images/img-card.JPG" alt="">
+                    </div>
+                    <div class="id-info">
+                        <span class="id-name">Cheikh Bass</span>
+                        <span class="id-role">Full Stack Dev</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="hero-content">
             <div class="hero-text">
+                <span class="hero-badge"><i class="fas fa-circle"></i>Disponible pour missions</span>
                 <h4>Bonjour, Je suis</h4>
                 <h1>Cheikh Bass Ndiaye <span>Développeur Full Stack</span></h1>
                 <p>Développeur Full Stack Web & Mobile diplômé de Bakeli School of Technology. Je construis des
                     applications performantes, des interfaces responsives et des API robustes pour des PME et
                     communautés sénégalaises.</p>
                 <div class="hero-btns">
-                    <a href="#portfolio" class="btn btn-primary">Voir mes projets</a>
-                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    <a href="#portfolio" class="btn-mini btn-mini-black"><i class="fas fa-play"></i>Voir mes projets</a>
+                    <a href="#contact" class="btn-mini btn-mini-light"><i class="fas fa-paper-plane"></i>Me contacter</a>
+                </div>
+                <div class="hero-terminal">
+                    <div><span class="prompt">&gt;</span>explore mes projets ci-dessous</div>
+                    <div class="muted"><span class="prompt">&gt;</span>ouvert au freelance & aux opportunités
+                        full-time</div>
                 </div>
             </div>
 
@@ -362,11 +116,13 @@
                 </div>
             </div>
         </div>
+
+        <a href="#about" class="hero-scroll">scroll</a>
     </section>
 
     <!-- About Section -->
     <section class="section" id="about">
-        <div class="section-title">
+        <div class="section-title" data-label="About Me">
             <h2>À propos de moi</h2>
         </div>
 
@@ -461,7 +217,7 @@
 
     <!-- Experience & Education Section -->
     <section class="section" id="experience" style="background-color: var(--bg-light);">
-        <div class="section-title">
+        <div class="section-title" data-label="Experience">
             <h2>Expérience & Formation</h2>
         </div>
 
@@ -555,7 +311,7 @@
 
     <!-- Services Section -->
     <section class="section" id="services">
-        <div class="section-title">
+        <div class="section-title" data-label="Services">
             <h2>Mes Services</h2>
         </div>
 
@@ -618,7 +374,7 @@
 
     <!-- Portfolio Section -->
     <section class="section1" id="portfolio">
-        <div class="section-title">
+        <div class="section-title" data-label="Projects">
             <h2>Mes Projets</h2>
         </div>
 
@@ -789,7 +545,7 @@
 
     <!-- Stack Technique Section -->
     <section class="section" id="stack">
-        <div class="section-title">
+        <div class="section-title" data-label="Tech Stack">
             <h2>Stack Technique</h2>
         </div>
 
@@ -848,7 +604,6 @@
                     <span class="stack-item">Render</span>
                     <span class="stack-item">supabase</span>
                     <span class="stack-item">VS Code</span>
-
                 </div>
             </div>
 
@@ -867,7 +622,7 @@
 
     <!-- Certifications Section -->
     <section class="section certifications-section" id="certifications">
-        <div class="section-title">
+        <div class="section-title" data-label="Certifications">
             <h2>Mes Certifications</h2>
             <p class="section-intro">Des formations complémentaires qui renforcent mes compétences en développement,
                 API, données et marketing digital.</p>
@@ -911,7 +666,7 @@
                 <div class="certification-content">
                     <span class="certification-category">Architecture & API</span>
                     <h3>API REST, GraphQL & microservices</h3>
-                    <p>Conception et développement d’architectures backend modernes.</p>
+                    <p>Conception et développement d'architectures backend modernes.</p>
                     <div class="certification-actions">
                         <a href="assets/documents/certificat-conception-et-d-veloppement-d-api-rest-graphql-et-microservices.pdf"
                             target="_blank" rel="noopener" class="certification-link">Voir le certificat <i
@@ -949,7 +704,8 @@
                             target="_blank" rel="noopener" class="certification-link">Voir le certificat <i
                                 class="fas fa-arrow-up-right-from-square"></i></a>
                         <a href="assets/documents/certificat-comprendre-les-fondamentaux-du-marketing-digital-en-entreprise.pdf" download
-                            aria-label="Télécharger le certificat marketing digital"><i class="fas fa-download"></i></a>
+                            aria-label="Télécharger le certificat marketing digital"><i
+                                class="fas fa-download"></i></a>
                     </div>
                 </div>
             </article>
@@ -958,7 +714,7 @@
 
     <!-- Contact Section -->
     <section class="section" id="contact" style="background-color: var(--bg-light);">
-        <div class="section-title">
+        <div class="section-title" data-label="Contact">
             <h2>Me Contacter</h2>
         </div>
 
@@ -980,7 +736,9 @@
                     </div>
                     <div class="contact-details">
                         <h3>Email</h3>
-                        <p>cheikhbass233@gmail.com</p>
+                        <p><a
+                                href="mailto:cheikhbass233@gmail.com"
+                                style="color: inherit; text-decoration: none;">cheikhbass233@gmail.com</a></p>
                     </div>
                 </div>
 
@@ -1000,7 +758,8 @@
                     </div>
                     <div class="contact-details">
                         <h3>GitHub</h3>
-                        <p>github.com/bachirnjaay02</p>
+                        <p><a href="https://github.com/bachirnjaay02" target="_blank"
+                                style="color: inherit; text-decoration: none;">github.com/bachirnjaay02</a></p>
                     </div>
                 </div>
 
@@ -1015,45 +774,35 @@
                 </div>
             </div>
 
-            <!-- <div class="contact-form">
-                <form id="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Votre nom" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Votre email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Sujet">
-                    </div>
-
-                    <div class="form-group">
-                        <textarea class="form-control" rows="5" placeholder="Votre message" required style="resize:vertical;"></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        
-                        <i class="fas fa-paper-plane" style="margin-right:0.5rem;"></a></i>Envoyer le message
-                    </button>
-                </form>
-            </div> -->
+            <!-- CTA adapté du style "Send Message" de la vidéo -->
+            <div class="contact-cta">
+                <div class="hero-terminal" style="text-align:center; margin-bottom:1.5rem;">
+                    <div><span class="prompt">&gt;</span>disponible pour missions freelance</div>
+                    <div class="muted"><span class="prompt">&gt;</span>réponse garantie sous 24h</div>
+                </div>
+                <div style="display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="whatsapp://send?phone=221778401904" target="_blank" class="btn-mini btn-mini-black">
+                        <i class="fab fa-whatsapp"></i>Message WhatsApp
+                    </a>
+                    <a href="mailto:cheikhbass233@gmail.com" class="btn-mini btn-mini-light">
+                        <i class="fas fa-paper-plane"></i>Envoyer un email
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <a href="#" class="footer-logo">CHEIKH<span>BASS</span></a>
+            <a href="index.html" class="footer-logo">CHEIKH<span>BASS</span></a>
 
             <ul class="footer-links">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#experience">Expérience</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
 
             <div class="footer-social">
@@ -1091,6 +840,76 @@
 
     <!-- Scripts -->
     <script>
+        // ===== Thème sombre/clair (bouton header, mémorisé) =====
+        const themeBtn = document.getElementById('theme-toggle');
+        if (themeBtn) {
+            const themeIcon = themeBtn.querySelector('i');
+            const paintThemeIcon = () => {
+                themeIcon.className = document.documentElement.getAttribute('data-theme') === 'dark'
+                    ? 'fas fa-sun'
+                    : 'fas fa-moon';
+            };
+            paintThemeIcon();
+            themeBtn.addEventListener('click', () => {
+                const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('cb-theme', next); } catch (err) { }
+                paintThemeIcon();
+            });
+        }
+
+        // ===== Intro plein écran (photo + nom + métier) =====
+        (function () {
+            const intro = document.getElementById('intro');
+            if (!intro) return;
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduceMotion) { intro.remove(); return; }
+
+            document.body.classList.add('intro-waiting', 'no-scroll');
+            intro.classList.add('is-visible');
+            intro.setAttribute('aria-hidden', 'false');
+
+            // éclatement du nom en lettres
+            const nameEl = intro.querySelector('.intro-name');
+            const nameText = nameEl.textContent.trim();
+            nameEl.textContent = '';
+            [...nameText].forEach((ch, i) => {
+                const s = document.createElement('span');
+                s.className = 'intro-letter';
+                s.style.animationDelay = (0.7 + i * 0.05) + 's';
+                s.textContent = ch === ' ' ? '\u00A0' : ch;
+                nameEl.appendChild(s);
+            });
+
+            // machine à écrire pour le métier
+            const roleText = 'Développeur Full Stack Web & Mobile';
+            const typed = intro.querySelector('.intro-typed');
+            const typeAt = performance.now() + 1650;
+            const typeTick = (now) => {
+                if (!intro.isConnected) return;
+                const n = Math.max(0, Math.floor((now - typeAt) / 40));
+                typed.textContent = roleText.slice(0, n);
+                if (n < roleText.length) requestAnimationFrame(typeTick);
+            };
+            requestAnimationFrame(typeTick);
+
+            let closing = false;
+            let exitTimer = null;
+            const close = () => {
+                if (closing || !intro.isConnected) return;
+                closing = true;
+                clearTimeout(exitTimer);
+                intro.classList.add('is-exiting');
+                document.body.classList.remove('intro-waiting', 'no-scroll');
+                setTimeout(() => intro.remove(), 800);
+            };
+            exitTimer = setTimeout(close, 6500);
+            intro.addEventListener('click', close);
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' || event.key === 'Enter') close();
+            });
+        })();
+
         // Mobile Navigation
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
@@ -1131,6 +950,91 @@
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // ===== Révélations au scroll (style vidéo : apparitions en cascade) =====
+        const revealTargets = [
+            ...document.querySelectorAll('.section-title'),
+            ...document.querySelectorAll('.about-content > *'),
+            ...document.querySelectorAll('.about-stats .stat'),
+            ...document.querySelectorAll('.timeline-item'),
+            ...document.querySelectorAll('.service-card'),
+            ...document.querySelectorAll('.portfolio-item'),
+            ...document.querySelectorAll('.stack-category'),
+            ...document.querySelectorAll('.certification-card'),
+            ...document.querySelectorAll('.contact-card')
+        ];
+
+        revealTargets.forEach(el => el.classList.add('reveal-item'));
+
+        // décalage en cascade à l'intérieur de chaque parent visible en même temps
+        document.querySelectorAll('.section, .about-content, .portfolio-grid, .services-grid, .stack-grid, .certifications-grid, .contact-info, .about-stats, .timeline').forEach(container => {
+            container.querySelectorAll('.reveal-item').forEach((el, i) => {
+                el.style.setProperty('--reveal-delay', `${(i % 6) * 0.09}s`);
+            });
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        revealTargets.forEach(el => revealObserver.observe(el));
+
+        // ===== Compteurs animés (3+, 10+, 8+) =====
+        const animateCounter = (el) => {
+            const text = el.textContent;
+            const match = text.match(/(\d+)(.*)/);
+            if (!match) return;
+            const target = parseInt(match[1], 10);
+            const suffix = match[2] || '';
+            const duration = 1300;
+            const start = performance.now();
+
+            const tick = (now) => {
+                const p = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(target * eased) + suffix;
+                if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        };
+
+        const statsEl = document.querySelector('.about-stats');
+        if (statsEl) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        entry.target.querySelectorAll('.stat-number').forEach((num, i) => {
+                            setTimeout(() => animateCounter(num), i * 180);
+                        });
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+            statsObserver.observe(statsEl);
+        }
+
+        // ===== Barres de compétences animées =====
+        const skillsEl = document.querySelector('.skills');
+        if (skillsEl) {
+            const skillsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        skillsEl.querySelectorAll('.skill-progress').forEach(progress => {
+                            const pct = progress.parentElement.previousElementSibling.lastElementChild.textContent;
+                            progress.style.width = pct;
+                        });
+                        skillsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            skillsObserver.observe(skillsEl);
+        }
 
         // Portfolio Filter
         const filterBtns = document.querySelectorAll('.filter-btn');
@@ -1190,27 +1094,15 @@
             if (event.key === 'Escape' && lightbox.classList.contains('is-visible')) closeLightbox();
         });
 
-        // Animate skills on scroll
-        const aboutSection = document.getElementById('about');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    document.querySelectorAll('.skill-progress').forEach(progress => {
-                        const pct = progress.parentElement.previousElementSibling.lastElementChild.textContent;
-                        progress.style.width = pct;
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
-        observer.observe(aboutSection);
-
         // Form Submission
-        document.getElementById('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Merci pour votre message ! Je vous répondrai très bientôt.');
-            e.target.reset();
-        });
+        const form = document.getElementById('form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Merci pour votre message ! Je vous répondrai très bientôt.');
+                e.target.reset();
+            });
+        }
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

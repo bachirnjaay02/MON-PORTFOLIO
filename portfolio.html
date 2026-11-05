@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Cheikh Bass Ndiaye</title>
+    <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cb-theme')||'light')}catch(e){}</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sections.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="logo">CHEIKH<span>BASS</span><span style="color: gray;"> code</span></a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Basculer le thème clair / sombre">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Bandeau de page -->
+    <div class="page-hero">
+        <div class="page-hero-content">
+            <span class="page-kicker"><span class="prompt">&gt;</span>portfolio showcase</span>
+            <h1>Mes <span class="dim">Réalisations</span></h1>
+            <p class="page-sub">Explorez mon parcours à travers mes projets, certifications et expertise technique.</p>
+        </div>
+
+        <!-- Onglets style pilules (comme la vidéo) -->
+        <div class="tabs-pill" role="tablist" aria-label="Catégories du portfolio">
+            <button class="active" role="tab" aria-selected="true" data-tab="projects">Projets</button>
+            <button role="tab" aria-selected="false" data-tab="certifications">Certifications</button>
+            <button role="tab" aria-selected="false" data-tab="stack">Tech Stack</button>
+        </div>
+    </div>
+
+    <!-- Panneau Projets -->
+    <section class="tab-panel active" id="panel-projects">
+        <div class="section-content" style="padding: 0 5%;">
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="assets/images/leer-xassida.png" alt="Leer Xassida">
+                    <div class="portfolio-overlay">
+                        <h3>Leer-Xassida.online</h3>
+                        <p>PWA de lecture de poésie Soufie multilingue (arabe, wolof, français) avec mode hors-ligne</p>
+                        <div class="overlay-tags">
+                            <span>React.js</span><span>PWA</span><span>Supabase</span><span>Netlify</span>
+                        </div>
+                        <a href="https://leer-xassida.vercel.app/" target="_blank" class="btn-light">Voir le site →</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="assets/images/leer-landing.jpeg" alt="Leer Landing">
+                    <div class="portfolio-overlay">
+                        <h3>Leer-Landing.online</h3>
+                        <p>Site de destination pour présenter les services et produits de Leer Xassida</p>
+                        <div class="overlay-tags">
+                            <span>React.js</span><span>PWA</span><span>Supabase</span><span>Netlify</span>
+                        </div>
+                        <a href="https://leer-landing.vercel.app/" target="_blank" class="btn-light">Voir le site →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="assets/images/ndiggel-app.png" alt="Ndiggël App">
+                    <div class="portfolio-overlay">
+                        <h3>Ndiggël App</h3>
+                        <p>Plateforme de gestion financière pour dahiras et tontines avec intégration paiement PayTech
+                        </p>
+                        <div class="overlay-tags">
+                            <span>React.js</span><span>TypeScript</span><span>Supabase</span><span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <img src="assets/images/CAFETUUBAMAJALIS.png" alt="Cafe Tuuba Majalis"
+                        onerror="this.src='https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&h=400&fit=crop&auto=format'">
+                    <div class="portfolio-overlay">
+                        <h3>Cafe Tuuba Majalis</h3>
+                        <p>Site e-commerce complet pour une entreprise de café sénégalaise</p>
+                        <div class="overlay-tags"><span>React.js</span><span>Laravel</span><span>MySQL</span></div>
+                        <a href="https://cafetuubamajalis.online" target="_blank" class="btn-light">Voir le site →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <img src="assets/images/BEAUTEXUNIVERS.png" alt="Beautex Univers"
+                        onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&auto=format'">
+                    <div class="portfolio-overlay">
+                        <h3>Beautex Univers</h3>
+                        <p>Site e-commerce pour une entreprise de tissus</p>
+                        <div class="overlay-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                        <a href="https://beautex-univers.online" target="_blank" class="btn-light">Voir le site →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <img src="assets/images/vertuoso.png" alt="Vertuoso Légumes">
+                    <div class="portfolio-overlay">
+                        <h3>Vertuoso Légumes</h3>
+                        <p>E-commerce légumes Dakar — commandes WhatsApp, panel admin, paiement offline</p>
+                        <div class="overlay-tags">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>LocalStorage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="assets/images/majalis app.jpg" alt="Majalis App">
+                    <div class="portfolio-overlay">
+                        <h3>Majalis App</h3>
+                        <p>App mobile Mouride : Xassidas, compteur Wird, horaires de prières</p>
+                        <div class="overlay-tags"><span>React Native</span><span>Expo</span><span>Zustand</span></div>
+                        <a href="https://majaliss.vercel.app" target="_blank" class="btn-light">Voir le projet →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="assets/images/dma app.jpg" alt="App DMA">
+                    <div class="portfolio-overlay">
+                        <h3>App DMA — Dahira</h3>
+                        <p>Application mobile pour un Dahira sénégalais</p>
+                        <div class="overlay-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                        <a href="https://app-dma.vercel.app" target="_blank" class="btn-light">Voir l'app →</a>
+                    </div>
+                </div>
+                <div class="portfolio-item navetane-card" data-category="mobile">
+                    <div class="navetane-gallery" aria-label="Aperçu des écrans de l'application Navétane">
+                        <div class="navetane-track">
+                            <img src="assets/images/navetane 1.png" alt="Écran d'accueil de l'application Navétane">
+                            <img src="assets/images/navetane 2.png" alt="Écran des résultats de l'application Navétane">
+                        </div>
+                        <div class="navetane-dots" aria-hidden="true"><span></span><span></span></div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Application Navétane</h3>
+                        <p>Application mobile pour le tournoi de navetanes.
+                            un solution pour adapter les horaires des matchs, les résultats et les classements du
+                            tournoi en temps réel.
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="assets/images/seexbass&magou app.jpg" alt="Seexbass & Magou App">
+                    <div class="portfolio-overlay">
+                        <h3>Seexbass & Magou</h3>
+                        <p>Application mobile — projet personnel</p>
+                        <div class="overlay-tags"><span>React Native</span><span>Expo</span></div>
+                        <a href="https://seexbass-magou.vercel.app" target="_blank" class="btn-light">Voir le projet
+                            →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <img src="assets/images/zemberei.png" alt="Zemberei Calculator">
+                    <div class="portfolio-overlay">
+                        <h3>Zemberei Calculator</h3>
+                        <p>Calculatrice web interactive et responsive</p>
+                        <div class="overlay-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <img src="assets/images/weather-now.png" alt="Weather Now">
+                    <div class="portfolio-overlay">
+                        <h3>Weather Now</h3>
+                        <p>Application météo interactive et responsive</p>
+                        <div class="overlay-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="assets/images/miniature cloture FULKU MASHOUNE.jpg" alt="miniature cloture FULKU MASHOUNE">
+                    <div class="portfolio-overlay">
+                        <h3>Miniature Cloture FULKU MASHOUNE</h3>
+                        <p>Miniature de cloture FULKU MASHOUNE pour Youtube</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="assets/images/RECTO-VRTU.png" alt="RECTO VRTU">
+                    <div class="portfolio-overlay">
+                        <h3>RECTO VRTU</h3>
+                        <p>carte de visite pour Vertuoso Légumes</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="assets/images/match-day.jpg" alt="Match Day">
+                    <div class="portfolio-overlay">
+                        <h3>Match Day</h3>
+                        <p>Affiche sportive </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Panneau Certifications -->
+    <section class="tab-panel" id="panel-certifications">
+        <div class="section-content" style="padding: 0 5%;">
+            <div class="certifications-grid">
+                <article class="certification-card">
+                    <div class="certification-icon"><i class="fab fa-python"></i></div>
+                    <div class="certification-content">
+                        <span class="certification-category">Data & Python</span>
+                        <h3>Analyse de données avec Python</h3>
+                        <p>Analyse et exploitation de données avec le langage Python.</p>
+                        <div class="certification-actions">
+                            <a href="assets/documents/certificat-analyse-de-donn-es-avec-le-langage-python.pdf"
+                                target="_blank" rel="noopener" class="certification-link">Voir le certificat <i
+                                    class="fas fa-arrow-up-right-from-square"></i></a>
+                            <a href="assets/documents/certificat-analyse-de-donn-es-avec-le-langage-python.pdf" download
+                                aria-label="Télécharger le certificat Python"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="certification-card">
+                    <div class="certification-icon"><i class="fab fa-js"></i></div>
+                    <div class="certification-content">
+                        <span class="certification-category">Développement</span>
+                        <h3>Certification JavaScript</h3>
+                        <p>Fondamentaux et pratique du développement JavaScript.</p>
+                        <div class="certification-actions">
+                            <a href="assets/documents/certificat-javascript.pdf" target="_blank" rel="noopener"
+                                class="certification-link">Voir le certificat <i
+                                    class="fas fa-arrow-up-right-from-square"></i></a>
+                            <a href="assets/documents/certificat-javascript.pdf" download
+                                aria-label="Télécharger le certificat JavaScript"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="certification-card">
+                    <div class="certification-icon"><i class="fas fa-code-branch"></i></div>
+                    <div class="certification-content">
+                        <span class="certification-category">Architecture & API</span>
+                        <h3>API REST, GraphQL & microservices</h3>
+                        <p>Conception et développement d'architectures backend modernes.</p>
+                        <div class="certification-actions">
+                            <a
+                                href="assets/documents/certificat-conception-et-d-veloppement-d-api-rest-graphql-et-microservices.pdf"
+                                target="_blank" rel="noopener" class="certification-link">Voir le certificat <i
+                                    class="fas fa-arrow-up-right-from-square"></i></a>
+                            <a
+                                href="assets/documents/certificat-conception-et-d-veloppement-d-api-rest-graphql-et-microservices.pdf"
+                                download aria-label="Télécharger le certificat API"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="certification-card">
+                    <div class="certification-icon"><i class="fab fa-git-alt"></i></div>
+                    <div class="certification-content">
+                        <span class="certification-category">Outils & collaboration</span>
+                        <h3>Les bases de Git</h3>
+                        <p>Gestion de versions et bonnes pratiques de collaboration.</p>
+                        <div class="certification-actions">
+                            <a href="assets/documents/certificat-les-bases-de-git.pdf" target="_blank" rel="noopener"
+                                class="certification-link">Voir le certificat <i
+                                    class="fas fa-arrow-up-right-from-square"></i></a>
+                            <a href="assets/documents/certificat-les-bases-de-git.pdf" download
+                                aria-label="Télécharger le certificat Git"><i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="certification-card">
+                    <div class="certification-icon"><i class="fas fa-bullhorn"></i></div>
+                    <div class="certification-content">
+                        <span class="certification-category">Marketing digital</span>
+                        <h3>Fondamentaux du marketing digital</h3>
+                        <p>Compréhension des leviers du marketing digital en entreprise.</p>
+                        <div class="certification-actions">
+                            <a
+                                href="assets/documents/certificat-comprendre-les-fondamentaux-du-marketing-digital-en-entreprise.pdf"
+                                target="_blank" rel="noopener" class="certification-link">Voir le certificat <i
+                                    class="fas fa-arrow-up-right-from-square"></i></a>
+                            <a
+                                href="assets/documents/certificat-comprendre-les-fondamentaux-du-marketing-digital-en-entreprise.pdf"
+                                download aria-label="Télécharger le certificat marketing digital"><i
+                                    class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panneau Tech Stack -->
+    <section class="tab-panel" id="panel-stack">
+        <div class="section-content" style="padding: 0 5%; margin-top: 1rem;">
+            <div class="stack-grid">
+                <div class="stack-category">
+                    <h3><i class="fas fa-desktop"></i> Frontend</h3>
+                    <div class="stack-items">
+                        <span class="stack-item">HTML5</span>
+                        <span class="stack-item">CSS3</span>
+                        <span class="stack-item">JavaScript ES6+</span>
+                        <span class="stack-item">React.js</span>
+                        <span class="stack-item">TypeScript</span>
+                        <span class="stack-item">Bootstrap</span>
+                        <span class="stack-item">Tailwind CSS</span>
+                        <span class="stack-item">Vite</span>
+                    </div>
+                </div>
+
+                <div class="stack-category">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <div class="stack-items">
+                        <span class="stack-item">PHP</span>
+                        <span class="stack-item">Laravel</span>
+                        <span class="stack-item">Node.js</span>
+                        <span class="stack-item">Express</span>
+                        <span class="stack-item">API REST</span>
+                        <span class="stack-item">Django</span>
+                    </div>
+                </div>
+
+                <div class="stack-category">
+                    <h3><i class="fas fa-database"></i> Base de données</h3>
+                    <div class="stack-items">
+                        <span class="stack-item">MySQL</span>
+                        <span class="stack-item">PostgreSQL</span>
+                        <span class="stack-item">Supabase (BaaS)</span>
+                    </div>
+                </div>
+
+                <div class="stack-category">
+                    <h3><i class="fas fa-mobile-alt"></i> Mobile</h3>
+                    <div class="stack-items">
+                        <span class="stack-item">React Native</span>
+                        <span class="stack-item">Flutter</span>
+                    </div>
+                </div>
+
+                <div class="stack-category">
+                    <h3><i class="fas fa-tools"></i> Outils & DevOps</h3>
+                    <div class="stack-items">
+                        <span class="stack-item">Git</span>
+                        <span class="stack-item">GitHub</span>
+                        <span class="stack-item">Vercel</span>
+                        <span class="stack-item">Netlify</span>
+                        <span class="stack-item">Railway</span>
+                        <span class="stack-item">Render</span>
+                        <span class="stack-item">supabase</span>
+                        <span class="stack-item">VS Code</span>
+                    </div>
+                </div>
+
+                <div class="stack-category">
+                    <h3><i class="fas fa-paint-brush"></i> Design</h3>
+                    <div class="stack-items">
+                        <span class="stack-item">Affinity Designer</span>
+                        <span class="stack-item">Photoshop</span>
+                        <span class="stack-item">Illustrator</span>
+                        <span class="stack-item">Canva</span>
+                        <span class="stack-item">Capcut</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="index.html" class="footer-logo">CHEIKH<span>BASS</span></a>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="footer-social">
+                <a href="https://github.com/bachirnjaay02" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/cheikh-bass-ndiaye-739332346" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.tiktok.com/@seexbasscode" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://dribbble.com/seexbassmajalis17_" target="_blank"><i class="fab fa-dribbble"></i></a>
+                <a href="https://www.instagram.com/seexbass_majalis/#" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="whatsapp://send?phone=221778401904" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <p class="copyright">© 2026 Serigne Bassirou Ndiaye — Développeur Full Stack Web & Mobile. Tous droits
+                réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Image Lightbox -->
+    <div class="image-lightbox" id="image-lightbox" role="dialog" aria-modal="true" aria-label="Aperçu de l'image"
+        aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Fermer l'aperçu">
+            <i class="fas fa-xmark"></i>
+        </button>
+        <figure class="lightbox-figure">
+            <img class="lightbox-image" src="" alt="">
+            <figcaption class="lightbox-caption"></figcaption>
+        </figure>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // ===== Thème sombre/clair (bouton header, mémorisé) =====
+        const themeBtn = document.getElementById('theme-toggle');
+        if (themeBtn) {
+            const themeIcon = themeBtn.querySelector('i');
+            const paintThemeIcon = () => {
+                themeIcon.className = document.documentElement.getAttribute('data-theme') === 'dark'
+                    ? 'fas fa-sun'
+                    : 'fas fa-moon';
+            };
+            paintThemeIcon();
+            themeBtn.addEventListener('click', () => {
+                const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('cb-theme', next); } catch (err) { }
+                paintThemeIcon();
+            });
+        }
+
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links li');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                links.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+            });
+        }
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                if (hamburger) hamburger.classList.remove('active');
+                links.forEach(l => { l.style.animation = ''; });
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('active', window.pageYOffset > 300);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== Révélations au scroll (style vidéo : apparitions en cascade) =====
+        const revealTargets = [
+            ...document.querySelectorAll('.portfolio-item'),
+            ...document.querySelectorAll('.stack-category'),
+            ...document.querySelectorAll('.certification-card')
+        ];
+
+        revealTargets.forEach(el => el.classList.add('reveal-item'));
+
+        document.querySelectorAll('.portfolio-grid, .stack-grid, .certifications-grid').forEach(container => {
+            container.querySelectorAll('.reveal-item').forEach((el, i) => {
+                el.style.setProperty('--reveal-delay', `${(i % 6) * 0.09}s`);
+            });
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        revealTargets.forEach(el => revealObserver.observe(el));
+
+        // ===== Onglets pilules (Projets / Certifications / Tech Stack) =====
+        const tabButtons = document.querySelectorAll('.tabs-pill button');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabButtons.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+
+                const tab = btn.getAttribute('data-tab');
+                tabPanels.forEach(panel => {
+                    panel.classList.toggle('active', panel.id === `panel-${tab}`);
+                });
+
+                // lancer les révélations des éléments du panneau affiché
+                const activePanel = document.getElementById(`panel-${tab}`);
+                activePanel.querySelectorAll('.reveal-item').forEach(el => el.classList.add('revealed'));
+                window.scrollTo({ top: activePanel.offsetTop - 140, behavior: 'smooth' });
+            });
+        });
+
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                portfolioItems.forEach(item => {
+                    item.style.display = (filter === 'all' || item.getAttribute('data-category') === filter) ? 'block'
+                        : 'none';
+                });
+            });
+        });
+
+        // Portfolio image lightbox
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+        const portfolioImages = document.querySelectorAll('.portfolio-item img');
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('is-visible');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('lightbox-open');
+        };
+
+        const openLightbox = (image) => {
+            lightboxImage.src = image.currentSrc || image.src;
+            lightboxImage.alt = image.alt;
+            lightboxCaption.textContent = image.alt;
+            lightbox.classList.add('is-visible');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('lightbox-open');
+            lightboxClose.focus();
+        };
+
+        portfolioImages.forEach(image => {
+            image.setAttribute('tabindex', '0');
+            image.setAttribute('role', 'button');
+            image.addEventListener('click', () => openLightbox(image));
+            image.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openLightbox(image);
+                }
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && lightbox.classList.contains('is-visible')) closeLightbox();
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+
+</html>

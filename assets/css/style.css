@@ -7,6 +7,8 @@
     --bg-light: #f8f9fa;
     --shadow: rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+    --text-muted: var(--text-muted);
+    --card-border: var(--card-border);
 }
 
 * {
@@ -180,7 +182,7 @@ header {
 .hero-text p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: #636e72;
+    color: var(--text-muted);
     max-width: 500px;
 }
 
@@ -368,7 +370,7 @@ header {
 
 .about-text p {
     margin-bottom: 1.5rem;
-    color: #636e72;
+    color: var(--text-muted);
     font-size: 1.1rem;
 }
 
@@ -389,7 +391,7 @@ header {
 
 .skill-bar {
     height: 12px;
-    background-color: #e9ecef;
+    background-color: var(--card-border);
     border-radius: 25px;
     overflow: hidden;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -417,7 +419,7 @@ header {
     transition: var(--transition);
     text-align: center;
     box-shadow: 0 10px 30px var(--shadow);
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--card-border);
     position: relative;
     overflow: hidden;
 }
@@ -461,7 +463,7 @@ header {
 }
 
 .service-card p {
-    color: #636e72;
+    color: var(--text-muted);
     line-height: 1.6;
 }
 
@@ -478,7 +480,7 @@ header {
     padding: 0.8rem 2rem;
     background-color: var(--light);
     color: var(--dark);
-    border: 2px solid #e9ecef;
+    border: 2px solid var(--card-border);
     border-radius: 50px;
     cursor: pointer;
     transition: var(--transition);
@@ -729,7 +731,7 @@ body.lightbox-open {
 .section-intro {
     max-width: 680px;
     margin: 1.5rem auto 0;
-    color: #636e72;
+    color: var(--text-muted);
 }
 
 .certifications-grid {
@@ -793,7 +795,7 @@ body.lightbox-open {
 }
 
 .certification-content p {
-    color: #636e72;
+    color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.55;
 }
@@ -920,7 +922,7 @@ body.lightbox-open {
 }
 
 .contact-details p {
-    color: #636e72;
+    color: var(--text-muted);
 }
 
 .contact-form {
@@ -928,7 +930,7 @@ body.lightbox-open {
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 0 10px 30px var(--shadow);
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--card-border);
 }
 
 .form-group {
@@ -939,7 +941,7 @@ body.lightbox-open {
     width: 100%;
     padding: 1.2rem;
     background-color: var(--bg-light);
-    border: 2px solid #e9ecef;
+    border: 2px solid var(--card-border);
     border-radius: 10px;
     color: var(--dark);
     font-size: 1rem;
@@ -1141,8 +1143,17 @@ footer {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
+    #header {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
     .hero-text h1 {
         font-size: 2.8rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
     }
 
     .section {
@@ -1203,4 +1214,1263 @@ footer {
     .contact-card {
         padding: 1rem;
     }
-} 
+}
+
+/* ==========================================================================
+   ANIMATIONS STYLE "RIFQI.DEV" — révélations de texte, badge ID pendante,
+   grille technique, reveals au scroll (ajoutées, thème clair conservé)
+   ========================================================================== */
+
+:root {
+    --mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Badge "disponible" façon terminal ------------------------------------- */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid rgba(6, 4, 136, 0.18);
+    background: rgba(6, 4, 136, 0.05);
+    border-radius: 999px;
+    padding: 0.45rem 1.1rem;
+    margin-bottom: 1.2rem;
+    animation: heroReveal 0.9s var(--ease-out-expo) 0.1s both;
+}
+
+.hero-badge i {
+    color: #00b894;
+    font-size: 0.55rem;
+    animation: pulseDot 1.8s ease-in-out infinite;
+}
+
+/* Curseur clignotant après "Bonjour, Je suis" ---------------------------- */
+.hero-text h4::after {
+    content: '▌';
+    color: var(--primary);
+    margin-left: 0.35rem;
+    animation: blinkCaret 1.1s steps(2, jump-none) infinite;
+}
+
+/* Ligne terminal sous les boutons ---------------------------------------- */
+.hero-terminal {
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    line-height: 2;
+    color: var(--text-muted);
+    margin-top: 2.2rem;
+}
+
+.hero-terminal .prompt {
+    color: var(--primary);
+    margin-right: 0.5rem;
+    font-weight: 600;
+}
+
+.hero-terminal .muted {
+    opacity: 0.55;
+}
+
+/* Indicateur SCROLL ------------------------------------------------------- */
+.hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0.8;
+    text-decoration: none;
+    animation: heroReveal 0.9s var(--ease-out-expo) 1.1s both;
+    z-index: 5;
+}
+
+.hero-scroll::after {
+    content: '↓';
+    font-size: 1rem;
+    letter-spacing: 0;
+    animation: bounceArrow 1.8s ease-in-out infinite;
+}
+
+/* Grille technique + halo (fond du hero) ---------------------------------- */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(60% 55% at 78% 22%, rgba(6, 4, 136, 0.10), transparent 70%),
+        linear-gradient(rgba(6, 4, 136, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 4, 136, 0.055) 1px, transparent 1px);
+    background-size: 100% 100%, 46px 46px, 46px 46px;
+    background-position: 0 0, 0 0, 0 0;
+    animation: gridDrift 60s linear infinite alternate;
+    pointer-events: none;
+}
+
+/* Révélations du contenu hero (cascade) ----------------------------------- */
+.hero-text > * {
+    animation: heroReveal 0.95s var(--ease-out-expo) both;
+}
+
+.hero-text > *:nth-child(1) { animation-delay: 0.18s; }
+.hero-text > *:nth-child(2) { animation-delay: 0.30s; }
+.hero-text > *:nth-child(3) { animation-delay: 0.44s; }
+.hero-text > *:nth-child(4) { animation-delay: 0.58s; }
+.hero-text > *:nth-child(5) { animation-delay: 0.70s; }
+.hero-text > *:nth-child(6) { animation-delay: 0.82s; }
+
+.hero-text h1 {
+    animation-name: maskRise;
+    animation-delay: 0.44s;
+    animation-duration: 1s;
+}
+
+.hero-image {
+    animation: heroImageIn 1.1s var(--ease-out-expo) 0.55s both;
+}
+
+/* ==========================================================================
+   BADGE ID PENDANTE — lanière qui pend du haut + photo qui se balance
+   ========================================================================== */
+.id-badge {
+    position: absolute;
+    top: 0;
+    right: 5.5%;
+    z-index: 6;
+    width: 190px;
+    pointer-events: none;
+    opacity: 0;
+    animation: badgeAppear 0.8s ease 0.9s both;
+    transform-origin: top center;
+    filter: drop-shadow(0 30px 30px rgba(34, 54, 120, 0.18));
+}
+
+/* nœud de la lanière (point d'accroche) */
+.id-assembly {
+    transform-origin: top center;
+    animation: badgeSwing 4.2s ease-in-out 1s infinite;
+}
+
+/* lanière */
+.lanyard {
+    position: relative;
+    width: 17px;
+    height: 165px;
+    margin: 0 auto;
+    background: repeating-linear-gradient(
+        55deg,
+        #223678 0px, #223678 14px,
+        #060488 14px, #060488 26px
+    );
+    border-radius: 4px 4px 5px 5px;
+    overflow: hidden;
+}
+
+.lanyard::after {
+    content: 'seexbass.code';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    writing-mode: vertical-rl;
+    font-family: var(--mono);
+    font-size: 7.5px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* attache métallique */
+.lanyard-clip {
+    width: 9px;
+    height: 22px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #b9c1d4, #dfe4ee 45%, #97a0b8 90%);
+    border: 1px solid rgba(60, 70, 100, 0.35);
+    border-radius: 3px;
+}
+
+/* carte */
+.id-card {
+    position: relative;
+    width: 172px;
+    margin: -1px auto 0;
+    background: #ffffff;
+    border: 5px solid #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 14px 34px rgba(6, 4, 136, 0.16), 0 2px 6px rgba(6, 4, 136, 0.10);
+    padding: 10px 10px 12px;
+    pointer-events: auto;
+    transform-origin: 50% -12px;
+    animation: cardSwing 4.2s ease-in-out 1.18s infinite;
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+/* trou de la lanière sur la carte */
+.id-card::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 9px;
+    border-radius: 999px;
+    background: #e8ebf3;
+    box-shadow: inset 0 1px 2px rgba(6, 4, 136, 0.25);
+}
+
+.id-photo {
+    position: relative;
+    margin-top: 14px;
+    border-radius: 9px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1.12;
+    background: #10142b;
+}
+
+.id-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(1) contrast(1.06);
+    transition: filter 0.5s ease, transform 0.5s var(--ease-out-expo);
+    display: block;
+}
+
+/* reflet qui balaie la photo */
+.id-photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: skewX(-12deg);
+    animation: cardSheen 3.2s ease-in-out 2s infinite;
+}
+
+.id-card:hover {
+    box-shadow: 0 22px 44px rgba(6, 4, 136, 0.22), 0 4px 10px rgba(6, 4, 136, 0.12);
+}
+
+.id-card:hover .id-photo img {
+    filter: none;
+    transform: scale(1.06);
+}
+
+.id-info {
+    text-align: center;
+    padding-top: 9px;
+    display: grid;
+    gap: 2px;
+}
+
+.id-name {
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1a1f33; /* fixe : la carte reste blanche dans les deux thèmes */
+}
+
+.id-role {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--primary);
+    opacity: 0.85;
+}
+
+/* micro-interaction : la carte "flotte" au survol tout en restant pendue */
+.id-badge:hover .id-assembly {
+    animation-play-state: paused;
+    transform: rotate(-8deg);
+    transition: transform 0.4s var(--ease-out-expo);
+}
+
+/* ==========================================================================
+   RÉVÉLATIONS AU SCROLL
+   ========================================================================== */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(38px);
+    will-change: opacity, transform;
+}
+
+.reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.9s var(--ease-out-expo) var(--reveal-delay, 0s),
+        transform 0.9s var(--ease-out-expo) var(--reveal-delay, 0s);
+}
+
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(34px);
+        filter: blur(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes maskRise {
+    0% {
+        opacity: 0;
+        clip-path: inset(0 0 100% 0);
+        transform: translateY(46px);
+    }
+    55% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        clip-path: inset(0 0 -30% 0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroImageIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.94);
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes badgeAppear {
+    from { opacity: 0; translate: 0 -12px; }
+    to { opacity: 1; translate: 0 0; }
+}
+
+/* pendule : la lanière + carte balancent depuis le point d'accroche */
+@keyframes badgeSwing {
+    0%, 100% { transform: rotate(9deg); }
+    50% { transform: rotate(-9deg); }
+}
+
+/* inertie : la carte se contre-balace légèrement, en retard sur la lanière */
+@keyframes cardSwing {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
+}
+
+@keyframes cardSheen {
+    0%, 55%, 100% { left: -80%; }
+    25% { left: 120%; }
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.7); }
+}
+
+@keyframes blinkCaret {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes bounceArrow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+@keyframes gridDrift {
+    from { background-position: 0 0, 0 0, 0 0; }
+    to { background-position: 0 0, 46px 46px, -46px 46px; }
+}
+
+/* Réveils : respect des préférences de mouvement réduit -------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .id-assembly,
+    .id-card,
+    .id-photo::after,
+    .hero-badge i,
+    .hero-text h4::after,
+    .hero-scroll::after,
+    .hero::before,
+    .id-badge,
+    .hero-text > *,
+    .hero-image {
+        animation: none !important;
+    }
+
+    .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* Responsive du badge pendante --------------------------------------------- */
+@media (max-width: 1100px) {
+    .id-badge {
+        right: 2%;
+        transform: scale(0.82);
+        transform-origin: top right;
+    }
+}
+
+/* layout empilé : badge masquée + contenu repoussé sous le header fixe */
+@media (max-width: 992px) {
+    .id-badge {
+        display: none;
+    }
+
+    .hero-content {
+        padding-top: 120px;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        order: 1;
+        text-align: center;
+    }
+
+    .hero-image {
+        order: 2;
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-scroll {
+        display: none;
+    }
+
+    .hero-terminal {
+        text-align: center;
+    }
+
+    .hero-btns {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-badge {
+        font-size: 0.68rem;
+        padding: 0.35rem 0.85rem;
+    }
+
+    .hero-terminal {
+        font-size: 0.82rem;
+    }
+}
+/* ==========================================================================
+   MINI BOUTONS black/light (style vidéo : petites pilules)
+   ========================================================================== */
+.btn-mini {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.62rem 1.4rem;
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn-mini-black {
+    background: #0d1024;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(13, 16, 36, 0.25);
+}
+
+.btn-mini-black:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(6, 4, 136, 0.35);
+}
+
+.btn-mini-light {
+    background: var(--light);
+    color: var(--dark);
+    border-color: #d8ddeb;
+    box-shadow: 0 4px 14px var(--shadow);
+}
+
+.btn-mini-light:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(6, 4, 136, 0.16);
+}
+
+.btn-mini i {
+    font-size: 0.75em;
+}
+
+/* ==========================================================================
+   BANDEAUX DE PAGE (design adapté à chaque page, langage identique)
+   ========================================================================== */
+.page-hero {
+    position: relative;
+    min-height: 52vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 9rem 5% 4rem;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f8f9fa 0%, #eef1f7 100%);
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(55% 60% at 50% 18%, rgba(6, 4, 136, 0.09), transparent 72%),
+        linear-gradient(rgba(6, 4, 136, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 4, 136, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 46px 46px, 46px 46px;
+    background-position: 0 0, 0 0, 0 0;
+    animation: gridDrift 60s linear infinite alternate;
+    pointer-events: none;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+}
+
+.page-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.1rem;
+    animation: heroReveal 0.9s var(--ease-out-expo) 0.1s both;
+}
+
+.page-kicker .prompt {
+    color: var(--primary);
+}
+
+.page-hero h1 {
+    font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+    font-weight: 700;
+    line-height: 1.06;
+    color: var(--dark);
+    margin-bottom: 1.2rem;
+    animation: maskRise 1s var(--ease-out-expo) 0.25s both;
+}
+
+.page-hero h1 .dim {
+    display: block;
+    color: rgba(34, 54, 120, 0.55);
+    font-weight: 700;
+}
+
+.page-hero .page-sub {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin: 0 auto;
+    animation: heroReveal 0.9s var(--ease-out-expo) 0.45s both;
+}
+
+/* Onglets du portfolio (style pilules de la vidéo) ----------------------- */
+.tabs-pill {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    background: var(--light);
+    border: 1px solid var(--card-border);
+    border-radius: 999px;
+    padding: 0.5rem;
+    box-shadow: 0 8px 26px var(--shadow);
+    margin: -2.2rem auto 3.5rem;
+    max-width: 640px;
+    position: relative;
+    z-index: 3;
+    animation: heroReveal 0.9s var(--ease-out-expo) 0.55s both;
+}
+
+.tabs-pill button {
+    flex: 1 1 0;
+    padding: 0.85rem 1.6rem;
+    font-family: var(--mono);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.tabs-pill button:hover {
+    color: var(--primary);
+}
+
+.tabs-pill button.active {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light);
+    box-shadow: 0 4px 14px rgba(6, 4, 136, 0.35);
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+    animation: heroReveal 0.7s var(--ease-out-expo) both;
+}
+
+@media (max-width: 700px) {
+    .page-hero {
+        min-height: auto;
+        padding-top: 8rem;
+    }
+
+    .page-hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .tabs-pill {
+        flex-direction: column;
+        border-radius: 22px;
+    }
+
+    .tabs-pill button {
+        flex: none;
+    }
+}
+
+.contact-cta {
+    margin-top: 4rem;
+}
+
+/* ==========================================================================
+   DESIGN TECH GLOBAL — grille + watermark sur toutes les sections
+   ========================================================================== */
+.section,
+.section1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before,
+.section1::before,
+.tab-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(50% 45% at 15% 0%, rgba(6, 4, 136, 0.06), transparent 70%),
+        radial-gradient(50% 45% at 88% 100%, rgba(6, 4, 136, 0.05), transparent 70%),
+        linear-gradient(rgba(6, 4, 136, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 4, 136, 0.04) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 46px 46px, 46px 46px;
+    background-position: 0 0, 0 0, 0 0, 0 0;
+    animation: gridDrift 60s linear infinite alternate;
+    pointer-events: none;
+}
+
+.section > *,
+.section1 > *,
+.tab-panel > * {
+    position: relative;
+    z-index: 1;
+}
+
+.tab-panel {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0 5rem;
+}
+
+/* libellé mono façon terminal au-dessus de chaque titre de section */
+.section-title {
+    position: relative;
+}
+
+.section-title::before {
+    content: '❯ ' attr(data-label);
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(6, 4, 136, 0.55);
+    margin-bottom: 1rem;
+    animation: heroReveal 0.8s var(--ease-out-expo) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section::before,
+    .section1::before {
+        animation: none !important;
+    }
+}
+
+/* ==========================================================================
+   BOUTON BASCULE DE THÈME (dark / light)
+   ========================================================================== */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    border-radius: 50%;
+    background: var(--light);
+    color: var(--dark);
+    border: 1px solid var(--card-border);
+    cursor: pointer;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 10px var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    z-index: 1200;
+    margin-left: 1.4rem;
+}
+
+.theme-toggle:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px) rotate(18deg);
+    box-shadow: 0 6px 16px rgba(6, 4, 136, 0.22);
+}
+
+@media (max-width: 992px) {
+    .theme-toggle {
+        margin-left: auto;
+        margin-right: 1rem;
+        width: 38px;
+        height: 38px;
+    }
+}
+
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ==========================================================================
+   THÈME SOMBRE (data-theme="dark") — esthétique de la vidéo
+   ========================================================================== */
+html[data-theme="dark"] {
+    --primary: #4d5dfd;
+    --secondary: #4d5dfd;
+    --dark: #e6e9f5;          /* = couleur du texte (sémantique inversée) */
+    --light: #12152a;         /* = couleur des cartes */
+    --bg-light: #0a0c16;
+    --shadow: rgba(0, 0, 0, 0.55);
+    --text-muted: #97a1bd;
+    --card-border: rgba(255, 255, 255, 0.09);
+}
+
+html[data-theme="dark"] .theme-toggle:hover {
+    color: #8a97ff;
+    border-color: #8a97ff;
+    box-shadow: 0 6px 16px rgba(77, 93, 253, 0.35);
+}
+
+/* Fonds dégradés des bannières */
+html[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #0a0c16 0%, #10142b 100%);
+}
+
+html[data-theme="dark"] .page-hero {
+    background: linear-gradient(180deg, #0a0c16 0%, #0e1226 100%);
+}
+
+html[data-theme="dark"] .certifications-section {
+    background: linear-gradient(135deg, #0a0c16 0%, #101538 100%);
+}
+
+/* Grille technique : lumineuse sur fond sombre */
+html[data-theme="dark"] .hero::before {
+    background:
+        radial-gradient(60% 55% at 78% 22%, rgba(120, 133, 255, 0.14), transparent 70%),
+        radial-gradient(45% 40% at 12% 85%, rgba(120, 133, 255, 0.10), transparent 70%),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 46px 46px, 46px 46px;
+}
+
+html[data-theme="dark"] .page-hero::before {
+    background:
+        radial-gradient(55% 60% at 50% 18%, rgba(120, 133, 255, 0.13), transparent 72%),
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 100% 100%, 46px 46px, 46px 46px;
+}
+
+html[data-theme="dark"] .section::before,
+html[data-theme="dark"] .section1::before,
+html[data-theme="dark"] .tab-panel::before {
+    background:
+        radial-gradient(50% 45% at 15% 0%, rgba(120, 133, 255, 0.08), transparent 70%),
+        radial-gradient(50% 45% at 88% 100%, rgba(120, 133, 255, 0.07), transparent 70%),
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 46px 46px, 46px 46px;
+}
+
+/* Watermark terminal des titres */
+html[data-theme="dark"] .section-title::before {
+    color: rgba(138, 151, 255, 0.85);
+}
+
+/* Badge "Disponible pour missions" */
+html[data-theme="dark"] .hero-badge {
+    background: rgba(120, 133, 255, 0.10);
+    border-color: rgba(138, 151, 255, 0.35);
+}
+
+/* Mini-boutons : inversés comme dans la vidéo (pilule blanche + pilule bordée) */
+html[data-theme="dark"] .btn-mini-black {
+    background: #e8eaf2;
+    color: #0d1024;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme="dark"] .btn-mini-black:hover {
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 10px 24px rgba(77, 93, 253, 0.45);
+}
+
+html[data-theme="dark"] .btn-mini-light {
+    background: rgba(255, 255, 255, 0.04);
+    color: #e6e9f5;
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .btn-mini-light:hover {
+    color: #8a97ff;
+    border-color: rgba(138, 151, 255, 0.55);
+    transform: translateY(-2px);
+}
+
+/* Titre de page à deux tons */
+html[data-theme="dark"] .page-hero h1 .dim {
+    color: rgba(226, 232, 255, 0.55);
+}
+
+/* Cartes à bordures codées en dur */
+html[data-theme="dark"] .certification-card {
+    border-color: rgba(255, 255, 255, 0.09);
+}
+
+html[data-theme="dark"] .certification-icon {
+    background: rgba(120, 133, 255, 0.16);
+    color: #8a97ff;
+}
+
+html[data-theme="dark"] .tech-tags span {
+    background: rgba(120, 133, 255, 0.12);
+    color: #a5b1ff;
+    border-color: rgba(138, 151, 255, 0.28);
+}
+
+html[data-theme="dark"] .navetane-gallery {
+    background: #12152a;
+}
+
+/* Pied de page : plus sombre que le bleu navy du mode clair */
+html[data-theme="dark"] footer {
+    background-color: #0c0f1e;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme="dark"] .footer-logo,
+html[data-theme="dark"] footer .footer-logo {
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .footer-logo span {
+    color: #8a97ff;
+}
+
+/* Lanière de la carte pendante : légèrement lumineuse sur fond sombre */
+html[data-theme="dark"] .lanyard {
+    background:
+        linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.16) 35%,
+            rgba(255, 255, 255, 0) 40%,
+            rgba(255, 255, 255, 0) 100%
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            #3a47c9 0,
+            #3a47c9 12px,
+            #2b35a8 12px,
+            #2b35a8 24px
+        );
+}
+
+html[data-theme="dark"] .image-lightbox {
+    background: rgba(5, 6, 14, 0.88);
+}
+
+/* ==========================================================================
+   INTRO PLEIN ÉCRAN (photo + nom cascade + métier tapé)
+   ========================================================================*/
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* on fige les animations visibles de la page le temps du rideau */
+body.intro-waiting #header *,
+body.intro-waiting .hero *,
+body.intro-waiting .page-hero * {
+    animation-play-state: paused !important;
+}
+
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(120% 90% at 50% 10%, #131735 0%, #0a0c16 55%, #05060d 100%);
+    overflow: hidden;
+}
+
+.intro-overlay.is-visible {
+    display: flex;
+}
+
+/* grille tech + halo en fond */
+.intro-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(55% 60% at 50% 18%, rgba(120, 133, 255, 0.14), transparent 72%),
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 100% 100%, 46px 46px, 46px 46px;
+    animation: gridDrift 60s linear infinite alternate;
+    pointer-events: none;
+}
+
+.intro-glow {
+    position: absolute;
+    width: 46vmin;
+    height: 46vmin;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.intro-glow.g1 {
+    background: rgba(77, 93, 253, 0.35);
+    top: -8%;
+    left: -10%;
+    animation: introGlowFloat 5s ease-in-out infinite alternate;
+}
+
+.intro-glow.g2 {
+    background: rgba(253, 203, 110, 0.18);
+    bottom: -12%;
+    right: -8%;
+    animation: introGlowFloat 5.6s ease-in-out 0.6s infinite alternate;
+}
+
+.intro-glow.g3 {
+    background: rgba(0, 212, 170, 0.12);
+    bottom: 8%;
+    left: 12%;
+    animation: introGlowFloat 6.2s ease-in-out 0.3s infinite alternate;
+}
+
+@keyframes introGlowFloat {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(4vmin, -3vmin) scale(1.15);
+    }
+}
+
+.intro-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+/* Photo circuelle ------------------------------ */
+.intro-photo {
+    position: relative;
+    width: clamp(140px, 20vw, 190px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: introPhotoIn 1s var(--ease-out-expo) 0.25s both;
+}
+
+.intro-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    filter: grayscale(0.35) contrast(1.05) brightness(0.95);
+    border-radius: 50%;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* anneau conique rotatif autour de la photo */
+.intro-ring {
+    position: absolute;
+    inset: -9px;
+    border-radius: 50%;
+    background: conic-gradient(from 0turn, rgba(77, 93, 253, 0) 0%, #4d5dfd 18%, #fdcb6e 40%, rgba(77, 93, 253, 0) 60%);
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3.5px), #000 calc(100% - 2.5px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 3.5px), #000 calc(100% - 2.5px));
+    animation: introRingSpin 1.4s linear infinite;
+}
+
+@keyframes introRingSpin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes introPhotoIn {
+    from {
+        opacity: 0;
+        transform: scale(1.55);
+        filter: blur(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+/* scanline qui balaie la photo */
+.intro-scan {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.intro-scan::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -45%;
+    height: 45%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));
+    animation: introScan 1.05s ease-in-out 0.55s 2 both;
+}
+
+@keyframes introScan {
+    from {
+        top: -45%;
+    }
+
+    to {
+        top: 105%;
+    }
+}
+
+/* Nom en cascade lettre par lettre ------------- */
+.intro-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 7vw, 4rem);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 34px rgba(120, 133, 255, 0.45);
+    margin-top: clamp(1.2rem, 3.5vh, 2rem);
+    overflow: hidden;
+    padding: 0.12em 0.2em;
+    white-space: nowrap;
+}
+
+.intro-letter {
+    display: inline-block;
+    animation: introLetterUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes introLetterUp {
+    from {
+        transform: translateY(120%) rotate(6deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+}
+
+/* Métier tapé façon terminal ------------------- */
+.intro-role {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    font-family: var(--mono);
+    font-size: clamp(0.78rem, 2.4vw, 1rem);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #aeb6ff;
+    margin-top: clamp(0.8rem, 2.5vh, 1.3rem);
+    min-height: 1.6em;
+    animation: heroReveal 0.6s ease 1.45s both;
+}
+
+.intro-role .prompt {
+    color: #fdcb6e;
+    font-weight: 600;
+}
+
+.intro-caret {
+    color: #fdcb6e;
+    font-weight: 400;
+    animation: blinkCaret 0.9s step-end infinite;
+}
+
+/* Sortie rideau + skip -------------------------- */
+.intro-overlay.is-exiting {
+    animation: introOut 0.75s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+.intro-overlay.is-exiting .intro-inner {
+    opacity: 0;
+    transform: scale(0.92);
+}
+
+@keyframes introOut {
+    to {
+        transform: translateY(-102%);
+    }
+}
+
+.intro-skip {
+    position: absolute;
+    bottom: 2.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.7rem 1.5rem;
+    border-radius: 999px;
+    cursor: pointer;
+    animation: introSkipPulse 2.2s ease-in-out infinite;
+    z-index: 2;
+    transition: var(--transition);
+    backdrop-filter: blur(4px);
+}
+
+.intro-skip:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary);
+    color: #ffffff;
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 8px 24px rgba(6, 4, 136, 0.25);
+}
+
+@keyframes introSkipPulse {
+
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 0.85;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .intro-overlay {
+        display: none !important;
+    }
+}
